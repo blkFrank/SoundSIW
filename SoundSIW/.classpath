@@ -13,6 +13,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/francesco/Scrivania/postgresql-8.3-607.jdbc2ee.jar"/>
+	<classpathentry kind="lib" path="C:/Users/utente/git/SoundSIW/SoundSIW/postgresql-8.1-415.jdbc2.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
