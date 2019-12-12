@@ -14,7 +14,7 @@ import object.Utente;
 import database.DAOFactory;
 
 /**
- * Servlet implementation class LoginServlet
+ * Servlet implementation class LoginServlet 
  */
 @SuppressWarnings("serial")
 
