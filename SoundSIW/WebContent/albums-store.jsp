@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html lang="en">
 
 <head>
@@ -40,7 +43,7 @@
                     <nav class="classy-navbar justify-content-between" id="oneMusicNav">
 
                         <!-- Nav brand -->
-                        <a href="index.html" class="nav-brand"><img src="img/core-img/logo.png" alt=""></a>
+                        <a href="index.jsp" class="nav-brand"><img src="img/core-img/logo.png" alt=""></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -63,17 +66,17 @@
                                     <li><a href="#">La tua libreria</a>
                                         <ul class="dropdown">
                                            
-                                            <li><a href="albums-store.html">Album</a></li>
-                                            <li><a href="event.html">PlayList</a></li>
-                                            <li><a href="blog.html">Brani</a></li>
-                                            <li><a href="contact.html">Artisti</a></li>
+                                            <li><a href="albums-store.jsp">Album</a></li>
+                                            <li><a href="event.jsp">PlayList</a></li>
+                                            <li><a href="blog.jsp">Brani</a></li>
+                                            <li><a href="contact.jsp">Artisti</a></li>
                                           
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="event.html">Eventi</a></li>
-                                    <li><a href="blog.html">News</a></li>
-                                    <li><a href="contact.html">Contattaci</a></li>
+                                    <li><a href="event.jsp">Eventi</a></li>
+                                    <li><a href="blog.jsp">News</a></li>
+                                    <li><a href="contact.jsp">Contattaci</a></li>
                                 </ul>
                                 </ul>
 
@@ -81,13 +84,34 @@
                                 <div class="login-register-cart-button d-flex align-items-center">
                                     <!-- Login/Register -->
                                     <div class="login-register-btn mr-50">
-                                        <a href="login.html" id="loginBtn">Accedi / Registrati</a>
+                                        <a href="Registrazione.jsp" id="loginBtn">Registrati</a>
                                     </div>
 
                                     <!-- Cart Button -->
                                     <div class="cart-btn">
                                         
                                     </div>
+                                </div>
+                            </div>
+                            	 <c:if test="${not loggato }"> 
+                                <div class="login-register-cart-button d-flex align-items-center">
+                                    <!-- Login -->
+                                    <div class="login-register-btn mr-50">
+                                        <a href="login.jsp" id="loginBtn">Login</a>
+                                    </div>
+                                    </div>
+                                    </c:if>
+
+								 <c:if test="${loggato }"> 
+                                <div class="login-register-cart-button d-flex align-items-center">
+                                    <!-- Logout -->
+                                    <div class="login-register-btn mr-50">
+                                        <a href="Logout">Logout</a>
+                                    </div>
+                                    </div>
+                                    </c:if>
+
+                                   </nav>
                                 </div>
                             </div>
                             <!-- Nav End -->

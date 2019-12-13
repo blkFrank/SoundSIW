@@ -23,13 +23,13 @@ public class UtenteDaoJDBC implements UtenteDAO {
 		Connection connection = this.dataSource.getConnection();
 		try {
 			
-			String insert = "insert into utente(username,password,email,registrato,genere) values (?,?,?,?,?)";
+			String insert = "insert into utente(username,password,email,registrato) values (?,?,?,?,?)";
 			PreparedStatement statement = connection.prepareStatement(insert);
 			statement.setString(1, utente.getUsername());
 			statement.setString(2, utente.getPassword());
 			statement.setString(3, utente.getEmail());
 			statement.setBoolean(4, utente.isRegistrato());
-			statement.setString(5, utente.getGenere());
+			
 			statement.executeUpdate();
 		} catch (SQLException e) {
 			throw new PersistenceException(e.getMessage());
@@ -96,7 +96,7 @@ public class UtenteDaoJDBC implements UtenteDAO {
 				utente.setPassword(result.getString("password"));
 				utente.setEmail(result.getString("email"));
 				utente.setRegistrato(result.getBoolean("registrato"));
-				utente.setGenere(result.getString("genere"));
+				
 		        utenti.add(utente);
 			}
 		} catch (SQLException e) {
@@ -199,7 +199,7 @@ public class UtenteDaoJDBC implements UtenteDAO {
 				utente.setUsername(result.getString("username"));				
 				utente.setPassword(result.getString("password"));
 				utente.setRegistrato(result.getBoolean("registrato"));
-				utente.setGenere(result.getString("genere"));
+				
 				
 			}
 		} catch (SQLException e) {
@@ -230,8 +230,7 @@ public class UtenteDaoJDBC implements UtenteDAO {
 				utente.setUsername(result.getString("username"));				
 				utente.setPassword(result.getString("password"));
 				utente.setRegistrato(result.getBoolean("registrato"));
-				utente.setGenere(result.getString("genere"));
-			}
+							}
 		} catch (SQLException e) {
 			throw new PersistenceException(e.getMessage());
 		} finally {

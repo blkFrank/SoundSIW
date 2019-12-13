@@ -4,15 +4,15 @@ public class Utente {
 	private String username="";
 	private String password="";
 	private String email="";
-	String GenerePreferito="";
+	
 	private boolean registrato;
 	
 	
-	public Utente(String username, String password,String email,String GenereP) {
+	public Utente(String username, String password,String email) {
 		this.username = username;
 		this.password = password;
 		this.email = email;
-		this.GenerePreferito=GenereP;
+		
 		this.registrato=true;
 	}
 	
@@ -20,8 +20,7 @@ public class Utente {
 		this.username = "";
 		this.password = "";
 		this.email = "";
-		this.GenerePreferito="";
-	}
+			}
 
 	public String getUsername() {
 		return username;
@@ -51,12 +50,7 @@ public class Utente {
 		this.registrato = registrato;
 	}
 	
-	public String getGenere() {
-		return GenerePreferito;
-	}
-	public void setGenere(String G) {
-		this.GenerePreferito = G;
-	}
+	
 
 	
 

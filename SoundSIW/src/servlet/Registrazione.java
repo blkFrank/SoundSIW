@@ -24,7 +24,7 @@ public class Registrazione extends HttpServlet {
 	 	String paramUsername = req.getParameter("username");
 	 	String paramPassword = req.getParameter("password");
 	 	String paramEmail= req.getParameter("email");
-	 	String paramGenere= req.getParameter("genere");
+	 	
 	 	
 	 	
 	 	if(paramEmail=="" || paramUsername=="" || paramPassword=="" ) {
@@ -41,7 +41,7 @@ public class Registrazione extends HttpServlet {
 	 	if(utente.getUsername().equals("")) {
 	 	
 	 		
-	 		Utente nuovoUtente=new Utente(paramUsername,paramPassword,paramEmail,paramGenere);
+	 		Utente nuovoUtente=new Utente(paramUsername,paramPassword,paramEmail);
 	 		utenteDao.save(nuovoUtente);
 	 		System.out.println("Registrato");
 	 		

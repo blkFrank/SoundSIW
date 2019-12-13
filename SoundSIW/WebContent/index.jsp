@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    
 <html lang="en">
 
 <head>
@@ -79,13 +83,34 @@
                                 <div class="login-register-cart-button d-flex align-items-center">
                                     <!-- Login/Register -->
                                     <div class="login-register-btn mr-50">
-                                        <a href="login.jsp" id="loginBtn">Accedi / Registrati</a>
+                                        <a href="Registrazione.jsp" id="RegistratiBtn">Registrati</a>
                                     </div>
 
                                     <!-- Cart Button -->
                                     <div class="cart-btn">
                                         
                                     </div>
+                                </div>
+                            </div>
+                            		 <c:if test="${not loggato }"> 
+                                <div class="login-register-cart-button d-flex align-items-center">
+                                    <!-- Login -->
+                                    <div class="login-register-btn mr-50">
+                                        <a href="login.jsp" id="loginBtn">Login</a>
+                                    </div>
+                                    </div>
+                                    </c:if>
+
+								 <c:if test="${loggato }"> 
+                                <div class="login-register-cart-button d-flex align-items-center">
+                                    <!-- Logout -->
+                                    <div class="login-register-btn mr-50">
+                                        <a href="Logout">Logout</a>
+                                    </div>
+                                    </div>
+                                    </c:if>
+
+                                   </nav>
                                 </div>
                             </div>
                             <!-- Nav End -->
