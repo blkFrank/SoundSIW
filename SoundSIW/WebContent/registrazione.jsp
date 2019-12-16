@@ -82,15 +82,10 @@
                                 <div class="login-register-cart-button d-flex align-items-center">
                                     <!-- Login/Register -->
                                     <div class="login-register-btn mr-50">
-                                        <a href="Registrazione.jsp" id="RegistratiBtn">Registrati</a>
+                                        <a href="registrazione.jsp" id="RegistratiBtn">Registrati</a>
                                     </div>
-                                    <!-- Cart Button -->
-                                    <div class="cart-btn">
-                                        
-                                    </div>
-                                </div>
-                            </div>	
-                            		 <c:if test="${not loggato }"> 
+                                    
+                                    		 <c:if test="${not loggato }"> 
                                 <div class="login-register-cart-button d-flex align-items-center">
                                     <!-- Login -->
                                     <div class="login-register-btn mr-50">
@@ -107,6 +102,13 @@
                                     </div>
                                     </div>
                                     </c:if>
+                                    <!-- Cart Button -->
+                                    <div class="cart-btn">
+                                        
+                                    </div>
+                                </div>
+                            </div>	
+                            		 
 
                                    </nav>
                                 </div>
@@ -140,7 +142,7 @@
                         <h3>Benvenuto</h3>
                         <!-- Login Form -->
                         <div class="login-form">
-                            <form action="#" method="post">
+                            <form action="Registrazione" method="post">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Email address</label>
                                     <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Enter E-mail">
@@ -152,7 +154,7 @@
                                 </div>
                                	<div class="form-group">
                                     <label for="exampleInputUsurname">Usurname</label>
-                                    <input type="usurname" class="form-control" name="usurname" id="usurname" placeholder="Usursname">
+                                    <input type="usurname" class="form-control" name="usurname" id="usurname" placeholder="Usurname">
                                 </div>
                                 	<button type="submit" name="Register" class="btn oneMusic-btn mt-30">Registrati</button>
                             </form>

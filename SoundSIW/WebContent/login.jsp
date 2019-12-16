@@ -82,15 +82,10 @@
                                 <div class="login-register-cart-button d-flex align-items-center">
                                     <!-- Login/Register -->
                                     <div class="login-register-btn mr-50">
-                                        <a href="Registrazione.jsp" id="RegistratiBtn">Registrati</a>
+                                        <a href="registrazione.jsp" id="RegistratiBtn">Registrati</a>
                                     </div>
-                                    <!-- Cart Button -->
-                                    <div class="cart-btn">
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            	 <c:if test="${not loggato }"> 
+                                    
+                                    	 <c:if test="${not loggato }"> 
                                 <div class="login-register-cart-button d-flex align-items-center">
                                     <!-- Login -->
                                     <div class="login-register-btn mr-50">
@@ -103,10 +98,19 @@
                                 <div class="login-register-cart-button d-flex align-items-center">
                                     <!-- Logout -->
                                     <div class="login-register-btn mr-50">
+                                    	
                                         <a href="Logout">Logout</a>
+                                        
                                     </div>
                                     </div>
                                     </c:if>
+                                    <!-- Cart Button -->
+                                    <div class="cart-btn">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            	 
 
                                    </nav>
                                 </div>
@@ -140,10 +144,10 @@
                         <h3>Bentornato</h3>
                         <!-- Login Form -->
                         <div class="login-form">
-                            <form action="#" method="post">
+                            <form action="login" method="post">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Email address</label>
-                                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter E-mail">
+                                    <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Enter E-mail">
                                     <small id="emailHelp" class="form-text text-muted"><i class="fa fa-lock mr-2"></i>We'll never share your email with anyone else.</small>
                                 </div>
                                 <div class="form-group">

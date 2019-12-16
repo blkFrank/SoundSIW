@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 
 import objectDAO.ArtistaDAO;
 import objectDAO.BranoDAO;
+import objectDAO.UtenteDAO;
 import object.Artista;
 import object.Brano;
 	
@@ -20,7 +21,8 @@ public class Main {
 			
 			BranoDAO bd=factory.getBranoDAO();
 			
-			
+					
+			UtenteDAO u=factory.getUtenteDAO();
 			
 			ArtistaDAO ad=factory.getArtistaDAO();
 			

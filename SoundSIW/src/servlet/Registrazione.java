@@ -48,7 +48,7 @@ public class Registrazione extends HttpServlet {
 	 		
 	 		resp.sendRedirect("login.jsp");
 	 	}else {
-	 		resp.sendRedirect("failRegister.jsp");
+	 		resp.sendRedirect("registrazione.jsp");
 	 	}
 	 }
 	 	

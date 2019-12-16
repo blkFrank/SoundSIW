@@ -82,18 +82,10 @@
                                 <div class="login-register-cart-button d-flex align-items-center">
                                     <!-- Login/Register -->
                                     <div class="login-register-btn mr-50">
-                                        <a href="Registrazione.jsp" id="loginBtn">Registrati</a>
+                                        <a href="registrazione.jsp" id="loginBtn">Registrati</a>
                                     </div>
 
-                               
-
-                                    <!-- Cart Button -->
-                                    <div class="cart-btn">
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            	 <c:if test="${not loggato }"> 
+                               				 <c:if test="${not loggato }"> 
                                 <div class="login-register-cart-button d-flex align-items-center">
                                     <!-- Login -->
                                     <div class="login-register-btn mr-50">
@@ -110,6 +102,14 @@
                                     </div>
                                     </div>
                                     </c:if>
+
+                                    <!-- Cart Button -->
+                                    <div class="cart-btn">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            	 
 
                                    </nav>
                                 </div>

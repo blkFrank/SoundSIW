@@ -56,7 +56,7 @@ public class UtilDao {
 		try {
 		
 			String create = "create SEQUENCE sequenza_id;"
-					+ "create table utente(\"username\" varchar(255) primary key, password varchar(255),email varchar(255),registrato boolean,genere varchar(255));"
+					+ "create table utente(\"username\" varchar(255) primary key, password varchar(255),email varchar(255),registrato boolean);"
 					+ "create table playlist(\"idplaylist\" varchar(255) primary key,nome varchar(255),utente varchar(255));"
 					+ "create table brano(\"nome\" varchar(255),artista varchar(255),durata varchar(255));"
 					+ "create table artista(\"nickname\" varchar(255) primary key,nome varchar(255), cognome varchar(255),numeroalbum int);"
