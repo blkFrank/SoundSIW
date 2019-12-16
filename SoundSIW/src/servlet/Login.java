@@ -32,7 +32,7 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 	String paramEmail= req.getParameter("email");
 	String paramPassword = req.getParameter("password");
 	
-	
+	String admin="admin@gmail.com";
 	
 	session.setAttribute("loggato", false);
 
@@ -42,8 +42,27 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 	UtenteDAO utenteDao = factory.getUtenteDAO();
 	Utente utente = utenteDao.findByCredential(paramEmail, paramPassword);
 	
+		
 	
-	if(utente!=null && utente.isRegistrato()) { 
+		
+		if(utente!=null && utente.isRegistrato()) { 
+			if(utente.getEmail().equals(admin))
+			{
+				
+				session.setAttribute("password", paramPassword);
+				session.setAttribute("email", utente.getEmail());
+				session.setAttribute("loggato", true);
+				session.setAttribute("loggatoAdmin", true);
+				session.setAttribute("username", utente.getUsername());
+				
+				RequestDispatcher disp;
+				
+				
+				disp = req.getRequestDispatcher("index.jsp");
+				disp.forward(req, resp);
+				return;
+			}
+			
 		session.setAttribute("password", paramPassword);
 		session.setAttribute("email", utente.getEmail());
 		session.setAttribute("loggato", true);

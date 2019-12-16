@@ -62,7 +62,7 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    
+                                    <c:if test="${not loggatoAdmin }">
                                     <li><a href="#">La tua libreria</a>
                                         <ul class="dropdown">
                                            
@@ -74,9 +74,16 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="event.jsp">Eventi</a></li>
-                                    <li><a href="blog.jsp">News</a></li>
+                                    
+                                    		<li><a href="blog.jsp">News</a></li>
                                     <li><a href="contact.jsp">Contattaci</a></li>
+                                    			</c:if>
+                                     <c:if test="${loggatoAdmin }"> 
+                                	<li><a href="event.jsp">Gestione brani</a></li>
+                                	<li><a href="event.jsp">Gestione news</a></li>
+                                    </c:if>
+                                    
+                                    
                                 </ul>
 
                                 <!-- Login/Register & Cart Button -->
@@ -142,8 +149,10 @@
                                 
                                 <h2 data-animation="fadeInUp" data-delay="300ms">SoundSIW<span>SoundSIW</span></h2>
                                 <!-- <a data-animation="fadeInUp" data-delay="500ms" href="#" class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>-->
-                                <input type="search" id="search" name="CercaCanzone" class="txt" size="20">
+                                <c:if test="${not loggatoAdmin }">
+                            		<input type="search" id="search" name="CercaCanzone" class="txt" size="20">
 								<input type="submit" class="btn" value="CercaCanzone">
+								</c:if>
 								
                             </div>
                         </div>
@@ -163,8 +172,10 @@
                                
                                 <h2 data-animation="fadeInUp" data-delay="300ms">SoundSIW <span>SoundSIW</span></h2>
                                 <!--  <a data-animation="fadeInUp" data-delay="500ms" href="#" class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>
-                            --><input type="search" id="search" name="CercaCanzone" class="txt" size="20">
+                            -->     <c:if test="${not loggatoAdmin }">
+                            		<input type="search" id="search" name="CercaCanzone" class="txt" size="20">
 								<input type="submit" class="btn" value="CercaCanzone">
+								</c:if>
                             </div>
                         </div>
                     </div>

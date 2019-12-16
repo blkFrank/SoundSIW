@@ -193,8 +193,10 @@ public class UtenteDaoJDBC implements UtenteDAO {
 			statement.setString(1, Email);
 			statement.setString(2, Password);
 			ResultSet result = statement.executeQuery();
+			
 			if (result.next()) {
 				utente = new Utente();
+				//System.out.println(result.getString("password"));
 				utente.setEmail(result.getString("email"));
 				utente.setUsername(result.getString("username"));				
 				utente.setPassword(result.getString("password"));
@@ -314,6 +316,40 @@ public class UtenteDaoJDBC implements UtenteDAO {
 			}
 		return 0;
 		
+	}
+	@Override
+	public Utente findAdmin(String Email,String username, String Password) {
+		Connection connection = this.dataSource.getConnection();
+		Utente utente = new Utente();
+		try {
+			
+			PreparedStatement statement;
+			String query = "select * from utente where email = ? and password = ?";
+			statement = connection.prepareStatement(query);
+			statement.setString(1, Email);
+			statement.setString(2, Password);
+			ResultSet result = statement.executeQuery();
+			
+			if (result.next()) {
+				utente = new Utente();
+				System.out.println(result.getString("password"));
+				utente.setEmail(result.getString("email"));
+				utente.setUsername(result.getString("username"));				
+				utente.setPassword(result.getString("password"));
+				utente.setRegistrato(result.getBoolean("registrato"));
+				
+				
+			}
+		} catch (SQLException e) {
+			throw new PersistenceException(e.getMessage());
+		} finally {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				throw new PersistenceException(e.getMessage());
+			}
+		}	
+		return utente;
 	}
 
 

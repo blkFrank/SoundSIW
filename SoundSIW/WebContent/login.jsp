@@ -61,7 +61,7 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    
+                                    <c:if test="${not loggatoAdmin }">
                                     <li><a href="#">La tua libreria</a>
                                         <ul class="dropdown">
                                            
@@ -73,9 +73,16 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="event.jsp">Eventi</a></li>
-                                    <li><a href="blog.jsp">News</a></li>
+                                    
+                                    		<li><a href="blog.jsp">News</a></li>
                                     <li><a href="contact.jsp">Contattaci</a></li>
+                                    			</c:if>
+                                     <c:if test="${loggatoAdmin }"> 
+                                	<li><a href="event.jsp">Gestione brani</a></li>
+                                	<li><a href="event.jsp">Gestione news</a></li>
+                                    </c:if>
+                                    
+                                    
                                 </ul>
 
                                 <!-- Login/Register & Cart Button -->
@@ -84,8 +91,7 @@
                                     <div class="login-register-btn mr-50">
                                         <a href="registrazione.jsp" id="RegistratiBtn">Registrati</a>
                                     </div>
-                                    
-                                    	 <c:if test="${not loggato }"> 
+									 <c:if test="${not loggato }"> 
                                 <div class="login-register-cart-button d-flex align-items-center">
                                     <!-- Login -->
                                     <div class="login-register-btn mr-50">
@@ -100,7 +106,6 @@
                                     <div class="login-register-btn mr-50">
                                     	
                                         <a href="Logout">Logout</a>
-                                        
                                     </div>
                                     </div>
                                     </c:if>
@@ -110,7 +115,7 @@
                                     </div>
                                 </div>
                             </div>
-                            	 
+                            		
 
                                    </nav>
                                 </div>
