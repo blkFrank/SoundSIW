@@ -134,36 +134,38 @@
     <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/breadcumb3.jpg);">
         <div class="bradcumbContent">
             
-            <h2>Registrati</h2>
+            <h2>NEWS</h2>
         </div>
         		
     </section>
     <!-- ##### Breadcumb Area End ##### -->
 
-    <!-- ##### Login Area Start ##### -->
+    <!-- ##### News Area Start ##### -->
     <section class="login-area section-padding-100">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-8">
                     <div class="login-content">
-                        <h3>Benvenuto</h3>
+                        <h3>Aggiungi News</h3>
                         <!-- Login Form -->
                         <div class="login-form">
-                            <form action="Registrazione" method="post">
+                            <form action="NewsS" method="post">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Email address</label>
-                                    <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Enter E-mail">
-                                    <small id="emailHelp" class="form-text text-muted"><i class="fa fa-lock mr-2"></i>We'll never share your email with anyone else.</small>
+                                    <label for="exampleInputTitolo">Titolo</label>
+                                    <input type="text" class="form-control" name="titolo" id="titolo" aria-describedby="titoloHelp" placeholder="Inserisci titolo news">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                                    <label for="date">Data</label>
+                                    <input type="text" class="form-control"  name="data" id="data" placeholder="Inserisci data news">
                                 </div>
-                               	<div class="form-group">
-                                    <label for="exampleInputUsurname">Username</label>
-                                    <input type="username" class="form-control" name="username" id="username" placeholder="Username">
+                                <div class="form-group">
+                                    <label for="exampleInputContenuto">
+                                    Contenuto
+                                    <textarea class="form-control" name="contenuto" id="contenuto" cols="120" placeholder="Inserisci contenuto news"></textarea>
+                                    </label>
                                 </div>
-                                	<button type="submit" name="Register" class="btn oneMusic-btn mt-30">Registrati</button>
+                                <button type="submit" class="btn oneMusic-btn mt-30">Aggiungi</button>
+                                	
                             </form>
                         </div>
                     </div>

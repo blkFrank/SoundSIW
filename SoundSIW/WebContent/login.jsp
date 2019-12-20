@@ -157,7 +157,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputUsurname1">Usurname</label>
-                                    <input type="usurname" class="form-control" name="usurname" id="usurname" placeholder="Usurname">
+                                    <input type="username" class="form-control" name="username" id="username" placeholder="Username">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Password</label>

@@ -3,6 +3,7 @@ package database;
 import objectDAO.ArtistaDAO;
 import objectDAO.BranoDAO;
 import objectDAO.BranoPlaylistDAO;
+import objectDAO.NewsDAO;
 import objectDAO.PlaylistDAO;
 import objectDAO.UtenteDAO;
 import database.UtilDao;
@@ -36,6 +37,6 @@ public abstract class DAOFactory {
 	public abstract UtilDao getUtilDAO();
 
 	public abstract BranoPlaylistDAO getBranoPlaylistDAO();
-		
+	public abstract NewsDAO getNewsDAO();
 	
 }

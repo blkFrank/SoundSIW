@@ -22,7 +22,8 @@ public class UtilDao {
 					+ "drop table if exists brano;"
 					+ "drop table if exists utente;"
 				    + "drop table if exists playlist;"
-				    + "drop table if exists branoPlaylist;";
+				    + "drop table if exists branoPlaylist;"
+				    +"drop table if exists news;";
 			PreparedStatement statement = connection.prepareStatement(delete);
 		
 			statement.executeUpdate();
@@ -60,11 +61,13 @@ public class UtilDao {
 					+ "create table playlist(\"idplaylist\" varchar(255) primary key,nome varchar(255),utente varchar(255));"
 					+ "create table brano(\"nome\" varchar(255),artista varchar(255),durata varchar(255));"
 					+ "create table artista(\"nickname\" varchar(255) primary key,nome varchar(255), cognome varchar(255),numeroalbum int);"
-					+ "create table branoPlaylist(nomeBrano varchar(255),idplaylist varchar(255));";
+					+ "create table branoPlaylist(nomeBrano varchar(255),idplaylist varchar(255));"
+			        + "create table news( \"titolo\"varchar(255) primary key,data date,contenuto varchar(255));";
 			PreparedStatement statement = connection.prepareStatement(create);
 		
 			statement.executeUpdate();
 			System.out.println("Creazione database eseguita");
+			System.out.println(create);
 		
 		} catch (SQLException e) {
 		

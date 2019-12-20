@@ -3,6 +3,7 @@ package database;
 import objectDAO.ArtistaDAO;
 import objectDAO.BranoDAO;
 import objectDAO.BranoPlaylistDAO;
+import objectDAO.NewsDAO;
 import objectDAO.PlaylistDAO;
 import objectDAO.UtenteDAO;
 
@@ -64,7 +65,10 @@ public class PostgresDAOfactory extends DAOFactory {
 	public UtilDao getUtilDAO() {
 		return new UtilDao(dataSource);
 	}
-
+	@Override
+	public NewsDAO getNewsDAO() {
+		return new NewsDaoJDBC(dataSource);
+	}
 	
 
 }

@@ -80,7 +80,7 @@
                                     			</c:if>
                                      <c:if test="${loggatoAdmin }"> 
                                 	<li><a href="event.jsp">Gestione brani</a></li>
-                                	<li><a href="event.jsp">Gestione news</a></li>
+                                	<li><a href="GestioneNews.jsp">Gestione news</a></li>
                                     </c:if>
                                     
                                     
