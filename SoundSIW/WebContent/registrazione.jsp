@@ -161,7 +161,7 @@
                                 </div>
                                	<div class="form-group">
                                     <label for="exampleInputUsurname">Username</label>
-                                    <input type="username" class="form-control" name="username" id="username" placeholder="Username">
+                                    <input type="text" class="form-control" name="username" id="username" placeholder="Username">
                                 </div>
                                 	<button type="submit" name="Register" class="btn oneMusic-btn mt-30">Registrati</button>
                             </form>

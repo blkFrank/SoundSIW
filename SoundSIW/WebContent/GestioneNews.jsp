@@ -156,7 +156,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="date">Data</label>
-                                    <input type="text" class="form-control"  name="data" id="data" placeholder="Inserisci data news">
+                                    <input type="date" class="form-control"  name="data" id="data" placeholder="Inserisci data news">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputContenuto">
