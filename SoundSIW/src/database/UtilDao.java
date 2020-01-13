@@ -62,7 +62,7 @@ public class UtilDao {
 					+ "create table brano(\"nome\" varchar(255),artista varchar(255),durata varchar(255));"
 					+ "create table artista(\"nickname\" varchar(255) primary key,nome varchar(255), cognome varchar(255),numeroalbum int);"
 					+ "create table branoPlaylist(nomeBrano varchar(255),idplaylist varchar(255));"
-			        + "create table news( \"titolo\"varchar(255) primary key,data date,contenuto varchar(255));";
+			        + "create table news( \"titolo\"varchar(255) primary key,data date,contenuto varchar(3000));";
 			PreparedStatement statement = connection.prepareStatement(create);
 		
 			statement.executeUpdate();

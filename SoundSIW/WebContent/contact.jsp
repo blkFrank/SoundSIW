@@ -74,7 +74,7 @@
                                         </ul>
                                     </li>
                                    
-                                    <li><a href="blog.jsp">News</a></li>
+                                    <li><a href="MostraNewsServlet">News</a></li>
                                     <li><a href="contact.jsp">Contattaci</a></li>
                                 </ul>
 
