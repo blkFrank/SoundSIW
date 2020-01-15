@@ -17,41 +17,34 @@ import database.DAOFactory;
  */
 @SuppressWarnings("serial")
 @WebServlet("/Registrazione")
-public class Registrazione extends HttpServlet {
-	
+public class Registrazione extends HttpServlet {	
 	 @Override
 	 protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	 	String paramUsername = req.getParameter("username");
 	 	String paramPassword = req.getParameter("password");
 	 	String paramEmail= req.getParameter("email");
-	 	
-	 	
-	 	
+
 	 	if(paramEmail=="" || paramUsername=="" || paramPassword=="" ) {
 	 		resp.sendRedirect("registrazione.jsp");
-	 	}
-	 		
-	 	
-	 else {
-	 	DAOFactory factory = DAOFactory.getDAOFactory(DAOFactory.POSTGRESQL);
-	 	UtenteDAO utenteDao = factory.getUtenteDAO();
-	 	Utente utente = utenteDao.findByUsername(paramUsername);
-	 	
-	 
-	 	if(utente.getUsername().equals("")) {
-	 	
-	 		
-	 		Utente nuovoUtente=new Utente(paramUsername,paramPassword,paramEmail);
-	 		utenteDao.save(nuovoUtente);
-	 		System.out.println("Registrato");
-	 		
-	 		
-	 		resp.sendRedirect("login.jsp");
-	 	}else {
-	 		resp.sendRedirect("registrazione.jsp");
-	 	}
+	 	} 
+	 	else {
+		 	DAOFactory factory = DAOFactory.getDAOFactory(DAOFactory.POSTGRESQL);
+		 	UtenteDAO utenteDao = factory.getUtenteDAO();
+		 	Utente utente = utenteDao.findByUsername(paramUsername);
+		 	
+		 
+		 	if(utente.getUsername().equals("")) {
+		 	
+		 		
+		 		Utente nuovoUtente=new Utente(paramUsername,paramPassword,paramEmail);
+		 		utenteDao.save(nuovoUtente);
+		 		System.out.println("Registrato");
+		 		
+		 		
+		 		resp.sendRedirect("login.jsp");
+		 	}else {
+		 		resp.sendRedirect("registrazione.jsp");
+		 	}
+		}	
 	 }
-	 	
-	 }
-
 }

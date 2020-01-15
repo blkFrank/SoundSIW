@@ -23,11 +23,11 @@ public class BranoDaoJDBC implements BranoDAO {
 		
 		Connection connection = this.dataSource.getConnection();
 		try {
-			String insert = "insert into brano(nome,artista,durata) values (?,?,?)";
+			String insert = "insert into brano(id,thumbnail,titolo) values (?,?,?)";
 			PreparedStatement statement = connection.prepareStatement(insert);
-			statement.setString(1, brano.getNome());
-			statement.setString(2, brano.getArtista());
-			statement.setString(3, brano.getDurata());
+			statement.setString(1, brano.getId());
+			statement.setString(2, brano.getThumbnail());
+			statement.setString(3, brano.getTitolo());
 			statement.executeUpdate();
 		} catch (SQLException e) {
 			throw new PersistenceException(e.getMessage());
@@ -44,21 +44,21 @@ public class BranoDaoJDBC implements BranoDAO {
 
 	
 	@Override
-	public Brano findByPrimaryKey(String nome) {
+	public Brano findByPrimaryKey(String id) {
 		
 		Connection connection = this.dataSource.getConnection();
 		Brano brano = null;
 		try {
 			PreparedStatement statement;
-			String query = "select * from brano where nome = ?";
+			String query = "select * from brano where id = ?";
 			statement = connection.prepareStatement(query);
-			statement.setString(1, nome);
+			statement.setString(1, id);
 			ResultSet result = statement.executeQuery();
 			if (result.next()) {
 				brano = new Brano();
-				brano.setNome(result.getString("nome"));	
-				brano.setArtista(result.getString("artista"));
-				brano.setDurata(result.getString("durata"));		
+				brano.setId(result.getString("id"));	
+				brano.setThumbnail(result.getString("thumbnail"));
+				brano.setTitolo(result.getString("titolo"));		
 			}
 		} catch (SQLException e) {
 			throw new PersistenceException(e.getMessage());
@@ -89,9 +89,9 @@ public class BranoDaoJDBC implements BranoDAO {
 			ResultSet result = statement.executeQuery();
 			while (result.next()) {
 				brano = new Brano();
-				brano.setNome(result.getString("nome"));	
-				brano.setArtista(result.getString("artista"));
-				brano.setDurata(result.getString("durata"));	
+				brano.setId(result.getString("id"));	
+				brano.setThumbnail(result.getString("thumbnail"));
+				brano.setTitolo(result.getString("titolo"));	
 				brani.add(brano);
 			}
 		} catch (SQLException e) {
@@ -108,13 +108,13 @@ public class BranoDaoJDBC implements BranoDAO {
 	}
 
 	@Override
-	public List<Brano> findAllByArtista (String artista) {
+	public List<Brano> findAllByTitolo (String titolo) {
 		Connection connection = this.dataSource.getConnection();
 		List<Brano> temp = new ArrayList<Brano>();
 		try {
 			Class.forName("org.postgresql.Driver");
 
-			String select = "select * from brano where artista ='"+artista+"'";
+			String select = "select * from brano where titolo ='"+titolo+"'";
 			
 			PreparedStatement statement = connection.prepareStatement(select);
 
@@ -123,9 +123,9 @@ public class BranoDaoJDBC implements BranoDAO {
             while ( rs.next() ) {
                Brano b = new Brano();
                 
-                 b.setNome(rs.getString(1));
-	       	     b.setArtista(rs.getString(2));
-	       	     b.setDurata( rs.getString(3));
+                 b.setId(rs.getString(1));
+	       	     b.setThumbnail(rs.getString(2));
+	       	     b.setTitolo( rs.getString(3));
 	       	     temp.add(b);
             }
             
@@ -160,11 +160,11 @@ public class BranoDaoJDBC implements BranoDAO {
 		
 		Connection connection = this.dataSource.getConnection();
 		try {
-			String update = "update brano SET nome = ?,artista = ?,durata = ? WHERE nome=?";
+			String update = "update brano SET id = ?,thumbnail = ?,titolo = ? WHERE id=?";
 			PreparedStatement statement = connection.prepareStatement(update);
 			
-			statement.setString(1, brano.getNome());
-			statement.setString(2, brano.getArtista());
+			statement.setString(1, brano.getId());
+			statement.setString(2, brano.getThumbnail());
 			
 			
 			statement.executeUpdate();
@@ -185,9 +185,9 @@ public class BranoDaoJDBC implements BranoDAO {
 	public void delete(Brano brano) {
 		Connection connection = this.dataSource.getConnection();
 		try {
-			String delete = "delete FROM brano WHERE nome= ? ";
+			String delete = "delete FROM brano WHERE id= ? ";
 			PreparedStatement statement = connection.prepareStatement(delete);
-			statement.setString(1, brano.getNome());
+			statement.setString(1, brano.getId());
 			
 			statement.executeUpdate();
 		} catch (SQLException e) {
@@ -201,5 +201,6 @@ public class BranoDaoJDBC implements BranoDAO {
 		}
 		
 	}
+
 
 }

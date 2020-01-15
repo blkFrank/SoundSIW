@@ -10,6 +10,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	
+	<!-- Script -->
+	
+	<script src="js/CaricaBrano.js"></script>
 
     <!-- Title -->
     <title>SoundSiw</title>
@@ -123,17 +127,22 @@
         </div>
     </header>
     <!-- ##### Header Area End ##### -->
-
+	
     <!-- ##### Breadcumb Area Start ##### -->
+     
     <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/breadcumb3.jpg);">
+        <!--  
         <div class="bradcumbContent">
-            <p>See what’s new</p>
-            <h2>Latest Albums</h2>
+            
         </div>
+        -->
+        
     </section>
+    
     <!-- ##### Breadcumb Area End ##### -->
 
     <!-- ##### Album Catagory Area Start ##### -->
+    <!-- 
     <section class="album-catagory section-padding-100-0">
         <div class="container">
             <div class="row">
@@ -172,8 +181,9 @@
             </div>
 
             <div class="row oneMusic-albums">
-
+		-->
                 <!-- Single Album -->
+                <!--  
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item t c p">
                     <div class="single-album">
                         <img src="img/bg-img/a1.jpg" alt="">
@@ -185,8 +195,9 @@
                         </div>
                     </div>
                 </div>
-
+				-->
                 <!-- Single Album -->
+                <!--  
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item s e q">
                     <div class="single-album">
                         <img src="img/bg-img/a2.jpg" alt="">
@@ -198,8 +209,9 @@
                         </div>
                     </div>
                 </div>
-
+				-->
                 <!-- Single Album -->
+                <!--  
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item w f r">
                     <div class="single-album">
                         <img src="img/bg-img/a3.jpg" alt="">
@@ -211,8 +223,9 @@
                         </div>
                     </div>
                 </div>
-
+				-->
                 <!-- Single Album -->
+                <!-- 
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item t g u">
                     <div class="single-album">
                         <img src="img/bg-img/a4.jpg" alt="">
@@ -224,8 +237,9 @@
                         </div>
                     </div>
                 </div>
-
+				-->
                 <!-- Single Album -->
+                <!-- 
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item d h v">
                     <div class="single-album">
                         <img src="img/bg-img/a5.jpg" alt="">
@@ -237,8 +251,9 @@
                         </div>
                     </div>
                 </div>
-
+				-->
                 <!-- Single Album -->
+                <!--  
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item t i x">
                     <div class="single-album">
                         <img src="img/bg-img/a6.jpg" alt="">
@@ -250,8 +265,9 @@
                         </div>
                     </div>
                 </div>
-
+				-->
                 <!-- Single Album -->
+                <!--  
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item b j y">
                     <div class="single-album">
                         <img src="img/bg-img/a7.jpg" alt="">
@@ -263,8 +279,9 @@
                         </div>
                     </div>
                 </div>
-
+				-->
                 <!-- Single Album -->
+                <!--  
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item a k z">
                     <div class="single-album">
                         <img src="img/bg-img/a8.jpg" alt="">
@@ -276,8 +293,9 @@
                         </div>
                     </div>
                 </div>
-
+				-->
                 <!-- Single Album -->
+                <!--  
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item w l number">
                     <div class="single-album">
                         <img src="img/bg-img/a9.jpg" alt="">
@@ -289,8 +307,9 @@
                         </div>
                     </div>
                 </div>
-
+				-->
                 <!-- Single Album -->
+                <!--  
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item d m">
                     <div class="single-album">
                         <img src="img/bg-img/a10.jpg" alt="">
@@ -302,8 +321,9 @@
                         </div>
                     </div>
                 </div>
-
+				-->
                 <!-- Single Album -->
+                <!--  
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item t n">
                     <div class="single-album">
                         <img src="img/bg-img/a11.jpg" alt="">
@@ -315,8 +335,9 @@
                         </div>
                     </div>
                 </div>
-
+				-->
                 <!-- Single Album -->
+                <!--  
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item b o">
                     <div class="single-album">
                         <img src="img/bg-img/a12.jpg" alt="">
@@ -332,23 +353,30 @@
             </div>
         </div>
     </section>
+    -->
     <!-- ##### Album Catagory Area End ##### -->
 
     <!-- ##### Buy Now Area Start ##### -->
+      
     <div class="oneMusic-buy-now-area mb-100">
         <div class="container">
             <div class="row">
 
                 <!-- Single Album Area -->
+                <!--    
                 <div class="col-12 col-sm-6 col-md-3">
                     <div class="single-album-area">
                         <div class="album-thumb">
                             <img src="img/bg-img/b1.jpg" alt="">
+                            -->
                             <!-- Album Price -->
+                            <!--  
                             <div class="album-price">
                                 <p>$0.90</p>
                             </div>
+                            -->
                             <!-- Play Icon -->
+                            <!--  
                             <div class="play-icon">
                                 <a href="#" class="video--play--btn"><span class="icon-play-button"></span></a>
                             </div>
@@ -361,8 +389,9 @@
                         </div>
                     </div>
                 </div>
-
+				-->
                 <!-- Single Album Area -->
+                <!--  
                 <div class="col-12 col-sm-6 col-md-3">
                     <div class="single-album-area">
                         <div class="album-thumb">
@@ -376,8 +405,9 @@
                         </div>
                     </div>
                 </div>
-
+				-->
                 <!-- Single Album Area -->
+                <!--  
                 <div class="col-12 col-sm-6 col-md-3">
                     <div class="single-album-area">
                         <div class="album-thumb">
@@ -391,8 +421,9 @@
                         </div>
                     </div>
                 </div>
-
+				-->
                 <!-- Single Album Area -->
+                <!--  
                 <div class="col-12 col-sm-6 col-md-3">
                     <div class="single-album-area">
                         <div class="album-thumb">
@@ -408,19 +439,21 @@
                 </div>
 
             </div>
-
+-->
             <div class="row">
                 <div class="col-12">
                     <div class="load-more-btn text-center">
-                        <a href="#" class="btn oneMusic-btn">Load More <i class="fa fa-angle-double-right"></i></a>
+                       <!--   <a href="#" class="btn oneMusic-btn">Load More <i class="fa fa-angle-double-right"></i></a> -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <!-- ##### Buy Now Area End ##### -->
 
     <!-- ##### Add Area Start ##### -->
+    <!--  
     <div class="add-area mb-100">
         <div class="container">
             <div class="row">
@@ -432,88 +465,54 @@
             </div>
         </div>
     </div>
+    -->
     <!-- ##### Add Area End ##### -->
-
+    
     <!-- ##### Song Area Start ##### -->
     <div class="one-music-songs-area mb-70">
         <div class="container">
-            <div class="row">
-
-                <!-- Single Song Area -->
-                <div class="col-12">
-                    <div class="single-song-area mb-30 d-flex flex-wrap align-items-end">
+            	<!--  <form method="post" action="YoutubeAudioDownloadServlet"> -->
+				<c:forEach items="${songs}" var="item" varStatus="loop">
+                <div class="row">
+                <!-- Start Single Song Area -->
+                <button class="btn single-song-area mb-30 d-flex flex-wrap align-items-end" type="submit" name="carica" onclick="CaricaBrano('${item.titolo}', '${item.id}')">   
+                <div class="col-12">    
                         <div class="song-thumbnail">
-                            <img src="img/bg-img/s1.jpg" alt="">
+                            <img id="thumbnail-${loop.index}" src="${item.thumbnail}" alt="">
                         </div>
                         <div class="song-play-area">
                             <div class="song-name">
-                                <p>01. Main Hit Song</p>
+                                <p id="titolo-${loop.index}" value="${item.titolo}">${item.titolo}</p>
+                                <p1 id="id-${loop.index}" value="${item.id}">${item.id}</p1>
                             </div>
-                            <audio preload="auto" controls>
-                                <source src="audio/dummy-audio.mp3">
-                            </audio>
                         </div>
-                    </div>
                 </div>
-
-                <!-- Single Song Area -->
-                <div class="col-12">
-                    <div class="single-song-area mb-30 d-flex flex-wrap align-items-end">
-                        <div class="song-thumbnail">
-                            <img src="img/bg-img/s2.jpg" alt="">
-                        </div>
-                        <div class="song-play-area">
-                            <div class="song-name">
-                                <p>01. Main Hit Song</p>
-                            </div>
-                            <audio preload="auto" controls>
-                                <source src="audio/dummy-audio.mp3">
-                            </audio>
-                        </div>
-                    </div>
+                </button>
                 </div>
-
-                <!-- Single Song Area -->
-                <div class="col-12">
-                    <div class="single-song-area mb-30 d-flex flex-wrap align-items-end">
-                        <div class="song-thumbnail">
-                            <img src="img/bg-img/s3.jpg" alt="">
-                        </div>
-                        <div class="song-play-area">
-                            <div class="song-name">
-                                <p>01. Main Hit Song</p>
-                            </div>
-                            <audio preload="auto" controls>
-                                <source src="audio/dummy-audio.mp3">
-                            </audio>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Song Area -->
-                <div class="col-12">
-                    <div class="single-song-area mb-30 d-flex flex-wrap align-items-end">
-                        <div class="song-thumbnail">
-                            <img src="img/bg-img/s4.jpg" alt="">
-                        </div>
-                        <div class="song-play-area">
-                            <div class="song-name">
-                                <p>01. Main Hit Song</p>
-                            </div>
-                            <audio preload="auto" controls>
-                                <source src="audio/dummy-audio.mp3">
-                            </audio>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+                <!-- End Single Song Area -->
+                </c:forEach>
+                <!--  </form> -->
+           
         </div>
     </div>
     <!-- ##### Song Area End ##### -->
-
-   
-
+						<!-- ##### Player Area Start ##### -->
+			
+						<div class="song-play-area song-name" style="position:fixed; right:200px; left: 200px; bottom:40px; z-index:3;">
+                        	  
+                        	<div id="player" >
+                            	<!--  
+                            	<div class="song-name" var="playerItem">
+                                	<p>${playerItem.titolo}</p>
+                            	</div>
+                            	<audio preload="auto" controls>
+	    							<source src="audio/hcVU07nOhw4.mp3">
+	    						</audio>
+	    						  -->
+                        	</div>
+                        	  
+    					</div>
+   	 					<!-- ##### Player Area End ##### -->
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area">
         <div class="container">
@@ -521,8 +520,8 @@
                 <div class="col-12 col-md-6">
                     <a href="#"><img src="img/core-img/logo.png" alt=""></a>
                     <p class="copywrite-text"><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+					Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                 </div>
 
                 

@@ -10,7 +10,7 @@ public interface BranoDAO {
 		public List<Brano> findAll();       
 		public void update(Brano brano); //Update
 		public void delete(Brano brano); //Delete
-		List<Brano> findAllByArtista(String artista);
+		List<Brano> findAllByTitolo(String titolo);
 }
 
 

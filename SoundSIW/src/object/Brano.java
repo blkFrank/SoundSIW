@@ -3,46 +3,44 @@ package object;
 
 public class Brano {
 
+	String titolo;
+	String id;
+	String thumbnail;
 	
-	String nome;
-	String artista;
-	String durata;
-	
-	
-	
-	public Brano(String nome, String artista,String durata) {
+	public Brano(String titolo, String id,String thumbnail) {
 		
-		this.nome = nome;
-		this.artista = artista;
-		this.durata=durata;
+		this.titolo = titolo;
+		this.id = id;
+		this.thumbnail = thumbnail;
 		
 	}
 	
 	public Brano() {
 	}
 
-	public String getNome() {
-		return nome;
+	public String getTitolo() {
+		return titolo;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	
-	public String getArtista() {
-		return artista;
-	}
-	public void setArtista(String artista) {
-		this.artista = artista;
+	public void setNome(String titolo) {
+		this.titolo = titolo;
 	}
 	
-	public String getDurata() {
-		return durata;
+	public String getId() {
+		return id;
 	}
-	public void setDurata(String artista) {
-		this.durata = artista;
+	public void setId(String id) {
+		this.id = id;
 	}
 	
-	
-	
+	public String getThumbnail() {
+		return thumbnail;
+	}
+	public void setThumbnail(String thumbnail) {
+		this.thumbnail = thumbnail;
+	}
+
+	public void setTitolo(String titolo) {
+		this.titolo = titolo;
+	}
 	
 }

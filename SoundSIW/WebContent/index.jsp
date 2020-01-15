@@ -128,23 +128,22 @@
     <section class="hero-area">
     	
         <div class="hero-slides owl-carousel">
+       <!-- <jsp:useBean id="YoutubeVideoSearch" scope="page" class="servlet.YoutubeSearchServlet" /> -->
             <!-- Single Hero Slide -->
             <div class="single-hero-slide d-flex align-items-center justify-content-center">
                 <!-- Slide Img -->
                 <div class="slide-img bg-img" style="background-image: url(img/bg-img/Celentano.jpg);"></div>
-                <!-- Slide Content -->
-                
+                <!-- Slide Content -->                
                 <div class="container">
                     <div class="row">
-                        <div class="col-12">
-                        		
+                        <div class="col-12">                        		
                             <div class="hero-slides-content text-center">
-                                
                                 <h2 data-animation="fadeInUp" data-delay="300ms">SoundSIW<span>SoundSIW</span></h2>
                                 <!-- <a data-animation="fadeInUp" data-delay="500ms" href="#" class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>-->
-                                <input type="search" id="search" name="CercaCanzone" class="txt" size="20">
-								<input type="submit" class="btn" value="CercaCanzone">
-								
+	                            <form method="post" action="YoutubeSearchServlet">
+		                        	<input type="text" id="search" name="search" placeholder="Type something..." autocomplete="off" class="form-control" size="20" />
+		                    			<input type="submit" value="Search" class="form-control btn btn-primary w100">
+	                    		</form>
                             </div>
                         </div>
                     </div>
@@ -159,12 +158,13 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <div class="hero-slides-content text-center">
-                               
+                            <div class="hero-slides-content text-center">                               
                                 <h2 data-animation="fadeInUp" data-delay="300ms">SoundSIW <span>SoundSIW</span></h2>
-                                <!--  <a data-animation="fadeInUp" data-delay="500ms" href="#" class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>
-                            --><input type="search" id="search" name="CercaCanzone" class="txt" size="20">
-								<input type="submit" class="btn" value="CercaCanzone">
+                                <!--  <a data-animation="fadeInUp" data-delay="500ms" href="#" class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a> -->
+	                            <form method="post" action="YoutubeSearchServlet">
+	                                <input type="text" id="search" name="search" placeholder="Type something..." autocomplete="off" class="form-control" size="20" />
+	                    				<input type="submit" value="Search" class="form-control btn btn-primary w100">
+                    			</form>
                             </div>
                         </div>
                     </div>
@@ -188,7 +188,14 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-9">
                     <div class="ablums-text text-center mb-70">
-                        <p>Nam tristique ex vel magna tincidunt, ut porta nisl finibus. Vivamus eu dolor eu quam varius rutrum. Fusce nec justo id sem aliquam fringilla nec non lacus. Suspendisse eget lobortis nisi, ac cursus odio. Vivamus nibh velit, rutrum at ipsum ac, dignissim iaculis ante. Donec in velit non elit pulvinar pellentesque et non eros.</p>
+                        <p>
+                           Nam tristique ex vel magna tincidunt, ut porta nisl finibus.
+                           Vivamus eu dolor eu quam varius rutrum.
+                           Fusce nec justo id sem aliquam fringilla nec non lacus.
+                           Suspendisse eget lobortis nisi, ac cursus odio.
+                           Vivamus nibh velit, rutrum at ipsum ac, dignissim iaculis ante. 
+                           Donec in velit non elit pulvinar pellentesque et non eros.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -822,12 +829,11 @@
             <div class="row d-flex flex-wrap align-items-center">
                 <div class="col-12 col-md-6">
                     <a href="#"><img src="img/core-img/logo.png" alt=""></a>
-                    <p class="copywrite-text"><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    <p class="copywrite-text">
+						Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					</p>
                 </div>
-
-                
             </div>
         </div>
     </footer>

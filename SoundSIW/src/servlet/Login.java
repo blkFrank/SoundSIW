@@ -23,45 +23,42 @@ import database.DAOFactory;
 @WebServlet("/login")
 public class Login extends HttpServlet {
 	
+	@Override
+ 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-	
- @Override
-protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-	HttpSession session = req.getSession();
-	String paramEmail= req.getParameter("email");
-	String paramPassword = req.getParameter("password");
-	
-	
-	
-	session.setAttribute("loggato", false);
-
-	
-	System.out.println(paramEmail+" "+paramPassword);
-	DAOFactory factory = DAOFactory.getDAOFactory(DAOFactory.POSTGRESQL);
-	UtenteDAO utenteDao = factory.getUtenteDAO();
-	Utente utente = utenteDao.findByCredential(paramEmail, paramPassword);
-	
-	
-	if(utente!=null && utente.isRegistrato()) { 
-		session.setAttribute("password", paramPassword);
-		session.setAttribute("email", utente.getEmail());
-		session.setAttribute("loggato", true);
-		session.setAttribute("username", utente.getUsername());
-		
-		RequestDispatcher disp;
+		HttpSession session = req.getSession();
+		String paramEmail= req.getParameter("email");
+		String paramPassword = req.getParameter("password");
 		
 		
-		disp = req.getRequestDispatcher("index.jsp");
-		disp.forward(req, resp);
 		
-		}else {
+		session.setAttribute("loggato", false);
+	
 		
-		resp.sendRedirect("login.jsp");
+		System.out.println(paramEmail+" "+paramPassword);
+		DAOFactory factory = DAOFactory.getDAOFactory(DAOFactory.POSTGRESQL);
+		UtenteDAO utenteDao = factory.getUtenteDAO();
+		Utente utente = utenteDao.findByCredential(paramEmail, paramPassword);
 		
+		
+		if(utente!=null && utente.isRegistrato()) { 
+			session.setAttribute("password", paramPassword);
+			session.setAttribute("email", utente.getEmail());
+			session.setAttribute("loggato", true);
+			session.setAttribute("username", utente.getUsername());
+			
+			RequestDispatcher disp;
+			
+			
+			disp = req.getRequestDispatcher("index.jsp");
+			disp.forward(req, resp);
+			
+			}else {
+			
+			resp.sendRedirect("login.jsp");
+			
+		}
+	
 	}
-	
-	
-}
 
 }
