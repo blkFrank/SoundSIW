@@ -61,21 +61,28 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    
+                                    <c:if test="${not loggatoAdmin }">
                                     <li><a href="#">La tua libreria</a>
                                         <ul class="dropdown">
                                            
                                             <li><a href="albums-store.jsp">Album</a></li>
                                             <li><a href="event.jsp">PlayList</a></li>
-                                            <li><a href="blog.jsp">Brani</a></li>
+                                            <li><a href="MostraNewsServlet">Brani</a></li>
                                             <li><a href="contact.jsp">Artisti</a></li>
                                            
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="event.jsp">Eventi</a></li>
-                                    <li><a href="blog.jsp">News</a></li>
+                                    
+                                    		<li><a href="MostraNewsServlet">News</a></li>
                                     <li><a href="contact.jsp">Contattaci</a></li>
+                                    			</c:if>
+                                     <c:if test="${loggatoAdmin }"> 
+                                	<li><a href="event.jsp">Gestione brani</a></li>
+                                	<li><a href="event.jsp">Gestione news</a></li>
+                                    </c:if>
+                                    
+                                    
                                 </ul>
 
                                 <!-- Login/Register & Cart Button -->
@@ -84,8 +91,7 @@
                                     <div class="login-register-btn mr-50">
                                         <a href="registrazione.jsp" id="RegistratiBtn">Registrati</a>
                                     </div>
-                                    
-                                    		 <c:if test="${not loggato }"> 
+									 <c:if test="${not loggato }"> 
                                 <div class="login-register-cart-button d-flex align-items-center">
                                     <!-- Login -->
                                     <div class="login-register-btn mr-50">
@@ -98,6 +104,7 @@
                                 <div class="login-register-cart-button d-flex align-items-center">
                                     <!-- Logout -->
                                     <div class="login-register-btn mr-50">
+                                    	
                                         <a href="Logout">Logout</a>
                                     </div>
                                     </div>
@@ -107,8 +114,8 @@
                                         
                                     </div>
                                 </div>
-                            </div>	
-                            		 
+                            </div>
+                            		
 
                                    </nav>
                                 </div>
@@ -153,8 +160,8 @@
                                     <input type="password" class="form-control" name="password" id="password" placeholder="Password">
                                 </div>
                                	<div class="form-group">
-                                    <label for="exampleInputUsurname">Usurname</label>
-                                    <input type="usurname" class="form-control" name="usurname" id="usurname" placeholder="Usurname">
+                                    <label for="exampleInputUsurname">Username</label>
+                                    <input type="text" class="form-control" name="username" id="username" placeholder="Username">
                                 </div>
                                 	<button type="submit" name="Register" class="btn oneMusic-btn mt-30">Registrati</button>
                             </form>

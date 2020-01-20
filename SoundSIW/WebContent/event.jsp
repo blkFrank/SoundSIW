@@ -68,7 +68,7 @@
                                            
                                             <li><a href="albums-store.jsp">Album</a></li>
                                             <li><a href="event.jsp">PlayList</a></li>
-                                            <li><a href="blog.jsp">Brani</a></li>
+                                            <li><a href="MostraNewsServlet">Brani</a></li>
                                             <li><a href="contact.jsp">Artisti</a></li>
                                           
                                             </li>

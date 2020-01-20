@@ -72,14 +72,14 @@
                                            
                                             <li><a href="albums-store.jsp">Album</a></li>
                                             <li><a href="event.jsp">PlayList</a></li>
-                                            <li><a href="blog.jsp">Brani</a></li>
+                                            <li><a href="">Brani</a></li>
                                             <li><a href="contact.jsp">Artisti</a></li>
                                           
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="event.jsp">Eventi</a></li>
-                                    <li><a href="blog.jsp">News</a></li>
+                                    
+                                    <li><a href="MostraNewsServlet">News</a></li>
                                     <li><a href="contact.jsp">Contattaci</a></li>
                                 </ul>
                                 </ul>

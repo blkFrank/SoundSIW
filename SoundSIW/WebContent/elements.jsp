@@ -68,7 +68,7 @@
                                             <li><a href="index.jsp">Home</a></li>
                                             <li><a href="albums-store.jsp">Albums</a></li>
                                             <li><a href="event.jsp">Events</a></li>
-                                            <li><a href="blog.jsp">News</a></li>
+                                            <li><a href="MostraNewsServlet">News</a></li>
                                             <li><a href="contact.jsp">Contact</a></li>
                                             <li><a href="elements.jsp">Elements</a></li>
                                             <li><a href="login.jsp">Login</a></li>

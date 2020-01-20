@@ -62,7 +62,7 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    
+                                    <c:if test="${not loggatoAdmin }">
                                     <li><a href="#">La tua libreria</a>
                                         <ul class="dropdown">
                                            
@@ -74,9 +74,16 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="event.jsp">Eventi</a></li>
-                                    <li><a href="blog.jsp">News</a></li>
+                                    
+                                    		<li><a href="MostraNewsServlet">News</a></li>
                                     <li><a href="contact.jsp">Contattaci</a></li>
+                                    			</c:if>
+                                     <c:if test="${loggatoAdmin }"> 
+                                	<li><a href="event.jsp">Gestione brani</a></li>
+                                	<li><a href="GestioneNews.jsp">Gestione news</a></li>
+                                    </c:if>
+                                    
+                                    
                                 </ul>
 
                                 <!-- Login/Register & Cart Button -->
@@ -140,10 +147,12 @@
                             <div class="hero-slides-content text-center">
                                 <h2 data-animation="fadeInUp" data-delay="300ms">SoundSIW<span>SoundSIW</span></h2>
                                 <!-- <a data-animation="fadeInUp" data-delay="500ms" href="#" class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>-->
+								<c:if test="${not loggatoAdmin }">
 	                            <form method="post" action="YoutubeSearchServlet">
 		                        	<input type="text" id="search" name="search" placeholder="Type something..." autocomplete="off" class="form-control" size="20" />
 		                    			<input type="submit" value="Search" class="form-control btn btn-primary w100">
 	                    		</form>
+	                    		</c:if>
                             </div>
                         </div>
                     </div>
@@ -161,10 +170,14 @@
                             <div class="hero-slides-content text-center">                               
                                 <h2 data-animation="fadeInUp" data-delay="300ms">SoundSIW <span>SoundSIW</span></h2>
                                 <!--  <a data-animation="fadeInUp" data-delay="500ms" href="#" class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a> -->
+	                            <c:if test="${not loggatoAdmin }">
 	                            <form method="post" action="YoutubeSearchServlet">
 	                                <input type="text" id="search" name="search" placeholder="Type something..." autocomplete="off" class="form-control" size="20" />
 	                    				<input type="submit" value="Search" class="form-control btn btn-primary w100">
                     			</form>
+                    			</c:if>
+                                <!--  <a data-animation="fadeInUp" data-delay="500ms" href="#" class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>
+                            -->    
                             </div>
                         </div>
                     </div>
