@@ -59,35 +59,39 @@
                             </div>
 
                             <!-- Nav Start -->
-                            <div class="classynav">
+           <div class="classynav">
                                 <ul>
-                                     
-                                    
+                                    <c:if test="${not loggatoAdmin and loggato }">
                                     <li><a href="#">La tua libreria</a>
                                         <ul class="dropdown">
                                            
-                                            <li><a href="albums-store.jsp">Album</a></li>
-                                            <li><a href="event.jsp">PlayList</a></li>
-                                            <li><a href="MostraNewsServlet">Brani</a></li>
-                                            <li><a href="contact.jsp">Artisti</a></li>
-                                          
+                                           
+                                            <li><a href="playlist.jsp">PlayList</a></li>
+                                            <li><a href="contact.jsp">Contattaci</a></li>
+                                           
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="event.jsp">Eventi</a></li>
-                                    <li><a href="blog.jsp">News</a></li>
-                                    <li><a href="contact.jsp">Contattaci</a></li>
-                                </ul>
+                                    				<c:if test="${loggato }">
+                                    		<li><a href="MostraNewsServlet">News</a></li>
+                                    				</c:if>
+                                    
+                                    			</c:if>
+                                     <c:if test="${loggatoAdmin }"> 
+                                
+                                	<li><a href="GestioneNews.jsp">Gestione news</a></li>
+                                    </c:if>
+                                    
+                                    
                                 </ul>
 
                                 <!-- Login/Register & Cart Button -->
                                 <div class="login-register-cart-button d-flex align-items-center">
                                     <!-- Login/Register -->
                                     <div class="login-register-btn mr-50">
-                                        <a href="registrazione.jsp" id="loginBtn">Registrati</a>
+                                        <a href="registrazione.jsp" id="RegistratiBtn">Registrati</a>
                                     </div>
-                                
-											 <c:if test="${not loggato }"> 
+									 <c:if test="${not loggato }"> 
                                 <div class="login-register-cart-button d-flex align-items-center">
                                     <!-- Login -->
                                     <div class="login-register-btn mr-50">
@@ -100,17 +104,18 @@
                                 <div class="login-register-cart-button d-flex align-items-center">
                                     <!-- Logout -->
                                     <div class="login-register-btn mr-50">
+                                    	
                                         <a href="Logout">Logout</a>
                                     </div>
                                     </div>
                                     </c:if>
                                     <!-- Cart Button -->
                                     <div class="cart-btn">
-                                      
+                                        
                                     </div>
                                 </div>
                             </div>
-                            	 
+                            		
 
                                    </nav>
                                 </div>
@@ -126,7 +131,7 @@
     <!-- ##### Header Area End ##### -->
 
     <!-- ##### Breadcumb Area Start ##### -->
-    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/breadcumb3.jpg);">
+    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/emma2.jpg);">
         <div class="bradcumbContent">
             
             <h2>Eventi</h2>

@@ -59,27 +59,27 @@
                             </div>
 
                             <!-- Nav Start -->
-                            <div class="classynav">
+                             <div class="classynav">
                                 <ul>
-                                    <c:if test="${not loggatoAdmin }">
+                                    <c:if test="${not loggatoAdmin and loggato }">
                                     <li><a href="#">La tua libreria</a>
                                         <ul class="dropdown">
                                            
-                                            <li><a href="albums-store.jsp">Album</a></li>
-                                            <li><a href="event.jsp">PlayList</a></li>
-                                            <li><a href="MostraNewsServlet">Brani</a></li>
-                                            <li><a href="contact.jsp">Artisti</a></li>
+                                            
+                                            <li><a href="playlist.jsp">PlayList</a></li>
+                                            <li><a href="contact.jsp">Contattaci</a></li>
                                            
                                             </li>
                                         </ul>
                                     </li>
-                                    
+                                    				<c:if test="${loggato }">
                                     		<li><a href="MostraNewsServlet">News</a></li>
-                                    <li><a href="contact.jsp">Contattaci</a></li>
+                                    				</c:if>
+                                    
                                     			</c:if>
                                      <c:if test="${loggatoAdmin }"> 
-                                	<li><a href="event.jsp">Gestione brani</a></li>
-                                	<li><a href="event.jsp">Gestione news</a></li>
+                                	
+                                	<li><a href="GestioneNews.jsp">Gestione news</a></li>
                                     </c:if>
                                     
                                     
@@ -131,7 +131,7 @@
     <!-- ##### Header Area End ##### -->
 
     <!-- ##### Breadcumb Area Start ##### -->
-    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/breadcumb3.jpg);">
+    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/beatlos.jpg);">
         <div class="bradcumbContent">
             
             <h2>Registrati</h2>

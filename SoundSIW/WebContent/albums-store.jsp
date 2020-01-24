@@ -63,34 +63,38 @@
                             </div>
 
                             <!-- Nav Start -->
-                            <div class="classynav">
+                             <div class="classynav">
                                 <ul>
-                                     
-                                    
+                                    <c:if test="${not loggatoAdmin and loggato }">
                                     <li><a href="#">La tua libreria</a>
                                         <ul class="dropdown">
                                            
-                                            <li><a href="albums-store.jsp">Album</a></li>
-                                            <li><a href="event.jsp">PlayList</a></li>
-                                            <li><a href="">Brani</a></li>
-                                            <li><a href="contact.jsp">Artisti</a></li>
-                                          
+                                           
+                                            <li><a href="playlist.jsp">PlayList</a></li>
+                                            <li><a href="contact.jsp">Contattaci</a></li>
                                             </li>
                                         </ul>
                                     </li>
+                                    				<c:if test="${loggato }">
+                                    		<li><a href="MostraNewsServlet">News</a></li>
+                                    				</c:if>
                                     
-                                    <li><a href="MostraNewsServlet">News</a></li>
-                                    <li><a href="contact.jsp">Contattaci</a></li>
-                                </ul>
+                                    			</c:if>
+                                     <c:if test="${loggatoAdmin }"> 
+                                	
+                                	<li><a href="GestioneNews.jsp">Gestione news</a></li>
+                                    </c:if>
+                                    
+                                    
                                 </ul>
 
                                 <!-- Login/Register & Cart Button -->
                                 <div class="login-register-cart-button d-flex align-items-center">
                                     <!-- Login/Register -->
                                     <div class="login-register-btn mr-50">
-                                        <a href="registrazione.jsp" id="loginBtn">Registrati</a>
+                                        <a href="registrazione.jsp" id="RegistratiBtn">Registrati</a>
                                     </div>
-												 <c:if test="${not loggato }"> 
+									 <c:if test="${not loggato }"> 
                                 <div class="login-register-cart-button d-flex align-items-center">
                                     <!-- Login -->
                                     <div class="login-register-btn mr-50">
@@ -103,6 +107,7 @@
                                 <div class="login-register-cart-button d-flex align-items-center">
                                     <!-- Logout -->
                                     <div class="login-register-btn mr-50">
+                                    	
                                         <a href="Logout">Logout</a>
                                     </div>
                                     </div>
@@ -113,7 +118,7 @@
                                     </div>
                                 </div>
                             </div>
-                            	 
+                            		
 
                                    </nav>
                                 </div>
@@ -130,7 +135,7 @@
 	
     <!-- ##### Breadcumb Area Start ##### -->
      
-    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/breadcumb3.jpg);">
+    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/Ligabue.jpg);">
         <!--  
         <div class="bradcumbContent">
             
@@ -469,26 +474,34 @@
     <!-- ##### Add Area End ##### -->
     
     <!-- ##### Song Area Start ##### -->
+    
     <div class="one-music-songs-area mb-70">
         <div class="container">
+        	
             	<!--  <form method="post" action="YoutubeAudioDownloadServlet"> -->
 				<c:forEach items="${songs}" var="item" varStatus="loop">
                 <div class="row">
                 <!-- Start Single Song Area -->
-                <button class="btn single-song-area mb-30 d-flex flex-wrap align-items-end" type="submit" name="carica" onclick="CaricaBrano('${item.titolo}', '${item.id}')">   
+                <button style="background-color:black; width:300px;" class="btn single-song-area mb-30 d-flex flex-wrap align-items-end" type="submit" name="carica" onclick="CaricaBrano('${item.titolo}', '${item.id}')">   
                 <div class="col-12">    
+                		
                         <div class="song-thumbnail">
                             <img id="thumbnail-${loop.index}" src="${item.thumbnail}" alt="">
                         </div>
-                        <div class="song-play-area">
+                        
                             <div class="song-name">
                                 <p id="titolo-${loop.index}" value="${item.titolo}">${item.titolo}</p>
-                                <p1 id="id-${loop.index}" value="${item.id}">${item.id}</p1>
+                                <!-- <p1 id="id-${loop.index}" value="${item.id}">${item.id}</p1> -->
+                                
                             </div>
-                        </div>
+                        
                 </div>
                 </button>
+                
+                 <button style="left:120px" class="btn oneMusic-btn mt-30" >Aggiungi alla playlist</button>
+                
                 </div>
+               
                 <!-- End Single Song Area -->
                 </c:forEach>
                 <!--  </form> -->
