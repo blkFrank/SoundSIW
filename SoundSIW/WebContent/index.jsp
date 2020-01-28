@@ -129,11 +129,23 @@
             </div>
         </div>
         <c:if test="${loggato and not loggatoAdmin }">
-	                            <form method="post" action="YoutubeSearchServlet">
-		                        	<input type="text" id="search" name="search" placeholder="Type something..." autocomplete="off" class="form-control" size="20" />
-		                    			<input type="submit" value="Search" class="form-control btn btn-primary w100">
-	                    		</form>
-	                    		</c:if>
+        
+	         <form method="post" action="YoutubeSearchServlet">
+	            <div class="container">
+             		<div class="row justify-content-lg-center">
+                 		<div class="col-lg-5">
+	             			<input type="text" id="search" name="search" placeholder="Cerca la tua canzone..." autocomplete="off" class="form-control" size="20" />
+	             		</div>
+	         		</div>
+	         		<div class="row justify-content-lg-center">
+	             		<div class="col-sm-12 col-lg-3">
+	         			<input type="submit" value="Cerca" class="btn oneMusic-btn mt-30">
+	         			</div>
+	         		</div>
+	         	</div>
+	        </form>
+		
+        </c:if>
     </header>
     
     <!-- ##### Header Area End ##### -->
@@ -153,10 +165,10 @@
                         <div class="col-12">                        		
                             <div class="hero-slides-content text-center">
                             		<c:if test="${loggato }">
-                                <h2 data-animation="fadeInUp" data-delay="300ms">Sound<span>Sound</span></h2>
+                                <h2 data-animation="fadeInUp" data-delay="300ms">SoundSiw<span>SoundSiw</span></h2>
                                 	</c:if>
                                 		<c:if test="${not loggato }">
-                          <h2 data-animation="fadeInUp" data-delay="300ms">Iscriviti o accedi a Sound<span>Iscriviti o accedi a Sound</span></h2>
+                          <h2 data-animation="fadeInUp" data-delay="300ms">Iscriviti o accedi a SoundSiw<span>Iscriviti o accedi a SoundSiw</span></h2>
                                 	</c:if>
                                 <!-- <a data-animation="fadeInUp" data-delay="500ms" href="#" class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>-->
 								<!--<c:if test="${not loggatoAdmin }">
@@ -181,7 +193,7 @@
                         <div class="col-12">
                             <div class="hero-slides-content text-center">                               
                                 <c:if test="${not loggato }">
-                          <h2 data-animation="fadeInUp" data-delay="300ms">Iscriviti o accedi a Sound<span>Iscriviti o accedi a Sound</span></h2>
+                          <h2 data-animation="fadeInUp" data-delay="300ms">Iscriviti o accedi a SoundSiw<span>Iscriviti o accedi a SoundSiw</span></h2>
                                 	</c:if>
                                 <!--  <a data-animation="fadeInUp" data-delay="500ms" href="#" class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a> -->
 	                           <!--  <c:if test="${not loggatoAdmin }">
