@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.tomcat.util.http.fileupload.FileItem;
 import org.apache.tomcat.util.http.fileupload.disk.DiskFileItemFactory;
@@ -21,6 +22,10 @@ import com.sapher.youtubedl.YoutubeDL;
 import com.sapher.youtubedl.YoutubeDLException;
 import com.sapher.youtubedl.YoutubeDLRequest;
 import com.sapher.youtubedl.YoutubeDLResponse;
+
+import database.DAOFactory;
+import object.BranoPlaylist;
+import objectDAO.BranoPlaylistDAO;
 
 @WebServlet("/YoutubeAudioDownloadServlet")
 
@@ -34,16 +39,17 @@ public class YoutubeAudioDownloadServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		JsonElement data = new Gson().fromJson(request.getReader(),JsonElement.class);
-		
-		System.out.println("Scarico il brano con id" + data);
+		HttpSession session = request.getSession();
 		
 		String id = data.getAsString();
-
+		
+		System.out.println("Scarico il brano con id " + id);
+		
 		String videoUrl = "https://www.youtube.com/watch?v=" + id;
 		// Destination directory
 		ServletContext application = getServletConfig().getServletContext();
 		String directory = System.getProperty("user.home") +"/git/SoundSIW/SoundSIW/WebContent/audio";
-		System.out.println("Scarico il brano da" + directory);
+		System.out.println("Scarico il brano in " + directory);
 		// Build request
 		YoutubeDLRequest DLrequest = new YoutubeDLRequest(videoUrl, directory);
 
@@ -59,8 +65,24 @@ public class YoutubeAudioDownloadServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		/*
+		String paramUsername= (String) session.getAttribute("username");
 		
+		DAOFactory factory = DAOFactory.getDAOFactory(DAOFactory.POSTGRESQL);
+		BranoPlaylistDAO bd=factory.getBranoPlaylistDAO();
+		BranoPlaylist b=new BranoPlaylist(id,paramUsername);
+	    BranoPlaylist b1=bd.findByPlaylistAndNome(id,paramUsername);
+		if(b1==null)
+		{	
+			bd.save(b);
+			
+		}
+		else
+		{
+			System.out.println("Ciao!");
+		}
 		
+		*/
 	}
 
 }

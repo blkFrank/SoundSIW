@@ -1,6 +1,9 @@
 package object;
 
+import java.util.List;
+
 public class Playlist {
+	
 	
 	String idPlaylist;
 	String nome;
@@ -34,7 +37,6 @@ public class Playlist {
 	public void setUtente(String utente) {
 		this.utente = utente;
 	}
-	
 	
 	
 	

@@ -14,7 +14,8 @@
 	<!-- Script -->
 	
 	<script src="js/CaricaBrano.js"></script>
-
+	<script src="js/AggiungiBranoPlaylist.js"></script>
+	
     <!-- Title -->
     <title>SoundSiw</title>
 
@@ -70,7 +71,7 @@
                                         <ul class="dropdown">
                                            
                                            
-                                            <li><a href="playlist.jsp">PlayList</a></li>
+                                            <li><a href="MostraPlaylistServlet">PlayList</a></li>
                                             <li><a href="contact.jsp">Contattaci</a></li>
                                             </li>
                                         </ul>
@@ -497,9 +498,10 @@
                         
                 </div>
                 </button>
-                
-                 <button style="left:120px" class="btn oneMusic-btn mt-30" >Aggiungi alla playlist</button>
-                
+              
+                <button style="left:120px" class="btn oneMusic-btn mt-30" type="submit" name="caricaPlaylist" onclick="AggiungiBranoPlaylist('${item.titolo}', '${item.id}')">Aggiungi alla playlist </button>
+               
+               
                 </div>
                
                 <!-- End Single Song Area -->

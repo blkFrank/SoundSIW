@@ -67,7 +67,7 @@
                                         <ul class="dropdown">
                                            
                                            
-                                            <li><a href="playlist.jsp">PlayList</a></li>
+                                            <li><a href="MostraPlaylistServlet">PlayList</a></li>
                                             <li><a href="contact.jsp">Contattaci</a></li>
                                            
                                             </li>

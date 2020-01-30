@@ -29,6 +29,7 @@ function CaricaBrano(titolo, id) {
 	
 }
 
+
 function caricaPlayer(titolo, id){
 	console.log(titolo);
 	console.log(id);
