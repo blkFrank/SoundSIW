@@ -59,28 +59,16 @@
                             <!-- Nav Start -->
                              <div class="classynav">
                                 <ul>
-                                    <c:if test="${not loggatoAdmin and loggato }">
-                                    <li><a href="#">La tua libreria</a>
-                                        <ul class="dropdown">
-                                           
-                                           
-                                            <li><a href="playlist.jsp">PlayList</a></li>
-                                            <li><a href="contact.jsp">Contattaci</a></li>
-                                           
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    				<c:if test="${loggato }">
-                                    		<li><a href="MostraNewsServlet">News</a></li>
-                                    				</c:if>
-                                    
-                                    			</c:if>
-                                     <c:if test="${loggatoAdmin }"> 
-                                
-                                	<li><a href="GestioneNews.jsp">Gestione news</a></li>
+                                    <c:if test="${ loggatoAdmin or loggato }">
+                                        <li><a href="playlist.jsp">PlayList</a></li>
+                                        <li><a href="contact.jsp">Contattaci</a></li>
+	                                    <c:if test="${loggato }">
+	                                    	<li><a href="MostraNewsServlet">News</a></li>
+	                                    </c:if>
                                     </c:if>
-                                    
-                                    
+                                    <c:if test="${loggatoAdmin }"> 
+                                		<li><a href="GestioneNews.jsp">Gestione news</a></li>
+                                    </c:if>
                                 </ul>
 
                                 <!-- Login/Register & Cart Button -->
@@ -89,24 +77,21 @@
                                     <div class="login-register-btn mr-50">
                                         <a href="registrazione.jsp" id="RegistratiBtn">Registrati</a>
                                     </div>
-									 <c:if test="${not loggato }"> 
-                                <div class="login-register-cart-button d-flex align-items-center">
-                                    <!-- Login -->
-                                    <div class="login-register-btn mr-50">
-                                        <a href="login.jsp" id="loginBtn">Login</a>
-                                    </div>
-                                    </div>
+									<c:if test="${not loggato }">
+	                                    <!-- Login -->
+	                                    <div class="login-register-btn mr-50">
+	                                        <a href="login.jsp" id="loginBtn">Login</a>
+	                                    </div>
                                     </c:if>
-
-								 <c:if test="${loggato }"> 
-                                <div class="login-register-cart-button d-flex align-items-center">
-                                    <!-- Logout -->
-                                    <div class="login-register-btn mr-50">
+                                    <c:if test="${loggato }"> 
+                                    	<div class="login-register-btn mr-50">
                                     	
                                         <a href="Logout">Logout</a>
-                                    </div>
-                                    </div>
+                                    	</div>
                                     </c:if>
+                                 </div>
+
+								 
                                     <!-- Cart Button -->
                                     <div class="cart-btn">
                                         
