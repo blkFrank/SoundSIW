@@ -45,8 +45,8 @@
 
                         <!-- Nav brand -->
                         <a href="index.jsp" class="nav-brand"><img src="img/core-img/logo.png" alt=""></a>
-
-                        <!-- Navbar Toggler -->
+                                      
+       				<!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
                             <span class="navbarToggler"><span></span><span></span><span></span></span>
                         </div>
@@ -58,41 +58,51 @@
                             <div class="classycloseIcon">
                                 <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
                             </div>
+                            </div>
+                            
 
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <c:if test="${not loggatoAdmin and loggato }">
-                                    <li><a href="#">La tua libreria</a>
-                                        <ul class="dropdown">
-                                           
-                                           
-                                            <li><a href="MostraPlaylistServlet">PlayList</a></li>
-                                            <li><a href="contact.jsp">Contattaci</a></li>
-                                           
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    				<c:if test="${loggato }">
-                                    		<li><a href="MostraNewsServlet">News</a></li>
-                                    				</c:if>
-                                    
-                                    			</c:if>
-                                     <c:if test="${loggatoAdmin }"> 
-                                
-                                	<li><a href="GestioneNews.jsp">Gestione news</a></li>
+                                	 <c:if test="${not loggato}">
+                                    <li><a href="index.jsp">Home</a></li>
+                                    <li><a href="registrazione.jsp">Registrati</a></li>
+                                    <li><a href="login.jsp">Contattaci</a></li>
+                                    <li><a href="login.jsp">News</a></li>
+                                    <li><a href="login.jsp">Brani</a></li>
+                                     <li><a href="login.jsp">Playlist</a></li>
                                     </c:if>
+                                </ul>
+                                
+                                </div>
+                                 <div class="classynav">
+                                <ul>
+								<c:if test="${not loggatoAdmin and loggato }">
+                                    <li><a href="index.jsp">Home</a></li>
+                                    <li><a href="MostraPlaylistServlet">Playlist</a></li>
+                                    <li><a href="contact.jsp">Contattaci</a></li>
+                                    <li><a href="MostraNewsServlet">News</a></li>
+                                    <li><a href="brani.jsp">Brani</a></li>
                                     
+                                 </c:if>
+                                 </ul>
+                                
+                                </div>
+                                  <div class="classynav">
+                                <ul>
+                                 <c:if test="${loggatoAdmin }">
+                                  <li><a href="index.jsp">Home</a></li>
+                                    <li><a href="MostraPlaylistServlet">Playlist</a></li>
+                                    <li><a href="contact.jsp">Contattaci</a></li>
+                                    <li><a href="MostraNewsServlet">News</a></li>
+                                    <li><a href="GestioneNews.jsp">Gestione News</a></li>
+                                     </c:if>
                                     
                                 </ul>
-
-                                <!-- Login/Register & Cart Button -->
-                                <div class="login-register-cart-button d-flex align-items-center">
-                                    <!-- Login/Register -->
-                                    <div class="login-register-btn mr-50">
-                                        <a href="registrazione.jsp" id="RegistratiBtn">Registrati</a>
-                                    </div>
-									 <c:if test="${not loggato }"> 
+                                
+                                </div>
+                                  <!-- Login -->
+                                <c:if test="${not loggato }"> 
                                 <div class="login-register-cart-button d-flex align-items-center">
                                     <!-- Login -->
                                     <div class="login-register-btn mr-50">
@@ -105,49 +115,21 @@
                                 <div class="login-register-cart-button d-flex align-items-center">
                                     <!-- Logout -->
                                     <div class="login-register-btn mr-50">
-                                    	
                                         <a href="Logout">Logout</a>
                                     </div>
                                     </div>
                                     </c:if>
-                                    <!-- Cart Button -->
-                                    <div class="cart-btn">
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            		
+                                    </nav>
 
-                                   </nav>
+                                   
                                 </div>
                             </div>
                             <!-- Nav End -->
 
                         </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-        <c:if test="${loggato and not loggatoAdmin }">
-        
-	         <form method="post" action="YoutubeSearchServlet">
-	            <div class="container">
-             		<div class="row justify-content-lg-center">
-                 		<div class="col-lg-5">
-	             			<input type="text" id="search" name="search" placeholder="Cerca la tua canzone..." autocomplete="off" class="form-control" size="20" />
-	             		</div>
-	         		</div>
-	         		<div class="row justify-content-lg-center">
-	             		<div class="col-sm-12 col-lg-3">
-	         			<input type="submit" value="Cerca" class="btn oneMusic-btn mt-30">
-	         			</div>
-	         		</div>
-	         	</div>
-	        </form>
-		
-        </c:if>
+                   
+               
     </header>
-    
     <!-- ##### Header Area End ##### -->
 		
     <!-- ##### Hero Area Start ##### -->
@@ -165,18 +147,12 @@
                         <div class="col-12">                        		
                             <div class="hero-slides-content text-center">
                             		<c:if test="${loggato }">
-                                <h2 data-animation="fadeInUp" data-delay="300ms">SoundSiw<span>SoundSiw</span></h2>
+                                <h2 data-animation="fadeInUp" data-delay="300ms">Sound<span>Sound</span></h2>
                                 	</c:if>
                                 		<c:if test="${not loggato }">
-                          <h2 data-animation="fadeInUp" data-delay="300ms">Iscriviti o accedi a SoundSiw<span>Iscriviti o accedi a SoundSiw</span></h2>
+                          <h2 data-animation="fadeInUp" data-delay="300ms">Iscriviti o accedi <span>Iscriviti o accedi</span></h2>
                                 	</c:if>
-                                <!-- <a data-animation="fadeInUp" data-delay="500ms" href="#" class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>-->
-								<!--<c:if test="${not loggatoAdmin }">
-	                            <form method="post" action="YoutubeSearchServlet">
-		                        	<input type="text" id="search" name="search" placeholder="Type something..." autocomplete="off" class="form-control" size="20" />
-		                    			<input type="submit" value="Search" class="form-control btn btn-primary w100">
-	                    		</form>
-	                    		</c:if>-->
+                          
                             </div>
                         </div>
                     </div>
@@ -193,17 +169,9 @@
                         <div class="col-12">
                             <div class="hero-slides-content text-center">                               
                                 <c:if test="${not loggato }">
-                          <h2 data-animation="fadeInUp" data-delay="300ms">Iscriviti o accedi a SoundSiw<span>Iscriviti o accedi a SoundSiw</span></h2>
+                          <h2 data-animation="fadeInUp" data-delay="300ms">Ascolta i tuoi brani dove vuoi e quando vuoi!<span>Ascolta i tuoi brani dove vuoi e quando vuoi!</span></h2>
                                 	</c:if>
-                                <!--  <a data-animation="fadeInUp" data-delay="500ms" href="#" class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a> -->
-	                           <!--  <c:if test="${not loggatoAdmin }">
-	                            <form method="post" action="YoutubeSearchServlet">
-	                                <input type="text" id="search" name="search" placeholder="Type something..." autocomplete="off" class="form-control" size="20" />
-	                    				<input type="submit" value="Search" class="form-control btn btn-primary w100">
-                    			</form>
-                    			</c:if> -->
-                                <!--  <a data-animation="fadeInUp" data-delay="500ms" href="#" class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>
-                            -->    
+                                
                             </div>
                         </div>
                     </div>
@@ -213,7 +181,104 @@
     </section>
     
    
+   <section class="latest-albums-area section-padding-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading style-2">
+                        
+                        <h2>2,50 al giorno,18 a settimana, la musica è parte integrante della nostra vita!</h2>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </section>
 
+
+ <!-- ##### Featured Artist Area Start ##### -->
+    <section class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed" style="background-image: url(img/bg-img/bg-4.jpg);">
+        <div class="container">
+            <div class="row align-items-end">
+                <div class="col-12 col-md-5 col-lg-4">
+                    <div class="featured-artist-thumb">
+                        <img src="img/bg-img/musica.png" alt="">
+                    </div>
+                </div>
+                <div class="col-12 col-md-7 col-lg-8">
+                    <div class="featured-artist-content">
+                        <!-- Section Heading -->
+                        <div class="section-heading white text-left mb-30">
+                            <p>Sound</p>
+                            <h2>Sound è una piattaforma online che ti offre un esperienza musicale a 360°, puoi ascoltare musica , visualizzare notizie e creare playlist personalizzate!</h2>
+                        </div>
+                        
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+    </section>
+    <!-- ##### Featured Artist Area End ##### -->
+
+  
+            <div class="row">
+                <div class="col-12">
+                    <div class="albums-slideshow owl-carousel">
+                        <!-- Single Album -->
+                        <div class="single-album">
+                            <img src="img/bg-img/news.jpg" alt="">
+                            <div class="album-info">
+                               <h5>NEWS</h5>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Single Album -->
+                        <div class="single-album">
+                            <img src="img/bg-img/playlist.jpeg" alt="">
+                            <div class="album-info">
+                                
+                                    <h5>PLAYLIST</h5>
+                                
+                                
+                            </div>
+                        </div>
+
+                        <!-- Single Album -->
+                        <div class="single-album">
+                            <img src="img/bg-img/brani.png"alt="">
+                            <div class="album-info">
+                               
+                                    <h5>BRANI</h5>
+                                
+                                
+                            </div>
+                        </div>
+
+                        <!-- Single Album -->
+                        <div class="single-album">
+                            <img src="img/bg-img/contatti.jpg" alt="">
+                            <div class="album-info">
+                                
+                                    <h5>CONTATTI</h5>
+                               
+                                
+                            </div>
+                        </div>
+ 
+                    </div>
+                </div>
+            </div>
+   
+   <br>
+   <br>
+   <br>
+    <!-- ##### Latest Albums Area End ##### -->
+   
+
+	
+            
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area">
         <div class="container">
