@@ -135,7 +135,7 @@
     <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/emma2.jpg);">
         <div class="bradcumbContent">
             
-            <h2>Eventi</h2>
+            <h2>I tuoi brani</h2>
         </div>
     </section>
     <!-- ##### Breadcumb Area End ##### -->
