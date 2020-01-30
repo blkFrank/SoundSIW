@@ -458,8 +458,9 @@
     -->
     <!-- ##### Add Area End ##### -->
     
-    <!-- ##### Song Area Start ##### -->
     
+    
+    <!-- ##### Song Area Start ##### -->
     <div class="one-music-songs-area mb-70">
         <div class="container">
         	
@@ -467,6 +468,44 @@
 				<c:forEach items="${songs}" var="item" varStatus="loop">
                 <div class="row">
                 <!-- Start Single Song Area -->
+                <div class="col-12">    
+                	<div class="single-song-area mb-30 d-flex flex-wrap align-items-end">
+                        <button style="background-color:black;" class="btn single-song-area mb-10 d-flex flex-wrap align-items-end" type="submit" name="carica" onclick="CaricaBrano('${item.titolo}', '${item.id}')">
+                            <img id="thumbnail-${loop.index}" src="${item.thumbnail}" alt="">
+                        </button>
+                        <div class="song-play-area">
+                            <div class="song-name">
+                                <p id="titolo-${loop.index}" value="${item.titolo}">${item.titolo}</p>
+                                <!-- <p1 id="id-${loop.index}" value="${item.id}">${item.id}</p1> -->
+                                
+                            </div>
+                           
+                        </div>
+                        <div>
+                			<button class="btn oneMusic-btn mt-15" type="submit" name="caricaPlaylist" onclick="AggiungiBranoPlaylist('${item.titolo}', '${item.id}')">Aggiungi alla playlist </button>
+                		</div>
+                   		
+                    </div>
+                </div>
+                
+               
+                </div>
+               
+                <!-- End Single Song Area -->
+                </c:forEach>
+                <!--  </form> -->
+           
+        </div>
+    </div>
+    
+    
+    <!--  
+    <div class="one-music-songs-area mb-70">
+        <div class="container">
+        	
+            <c:forEach items="${songs}" var="item" varStatus="loop">
+                <div class="row">
+                
                 <button style="background-color:black; width:300px;" class="btn single-song-area mb-30 d-flex flex-wrap align-items-end" type="submit" name="carica" onclick="CaricaBrano('${item.titolo}', '${item.id}')">   
                 <div class="col-12">    
                 		
@@ -476,8 +515,7 @@
                         
                             <div class="song-name">
                                 <p id="titolo-${loop.index}" value="${item.titolo}">${item.titolo}</p>
-                                <!-- <p1 id="id-${loop.index}" value="${item.id}">${item.id}</p1> -->
-                                
+                            
                             </div>
                         
                 </div>
@@ -488,16 +526,15 @@
                
                 </div>
                
-                <!-- End Single Song Area -->
                 </c:forEach>
-                <!--  </form> -->
            
         </div>
     </div>
+    -->
     <!-- ##### Song Area End ##### -->
 						<!-- ##### Player Area Start ##### -->
 			
-						<div class="song-play-area song-name" style="position:fixed; right:200px; left: 200px; bottom:40px; z-index:3;">
+						<div class="song-play-area" style="position:fixed; right:200px; left: 200px; bottom:40px; z-index:3;">
                         	  
                         	<div id="player" >
                             	<!--  
