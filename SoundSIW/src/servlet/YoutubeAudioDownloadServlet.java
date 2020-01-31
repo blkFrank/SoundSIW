@@ -1,8 +1,6 @@
 package servlet;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.Iterator;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -12,20 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.tomcat.util.http.fileupload.FileItem;
-import org.apache.tomcat.util.http.fileupload.disk.DiskFileItemFactory;
-import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
-
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.sapher.youtubedl.YoutubeDL;
 import com.sapher.youtubedl.YoutubeDLException;
 import com.sapher.youtubedl.YoutubeDLRequest;
 import com.sapher.youtubedl.YoutubeDLResponse;
-
-import database.DAOFactory;
-import object.BranoPlaylist;
-import objectDAO.BranoPlaylistDAO;
 
 @WebServlet("/YoutubeAudioDownloadServlet")
 
@@ -52,13 +42,13 @@ public class YoutubeAudioDownloadServlet extends HttpServlet {
 		System.out.println("Scarico il brano in " + directory);
 		// Build request
 		YoutubeDLRequest DLrequest = new YoutubeDLRequest(videoUrl, directory);
-
 		DLrequest.setOption("extract-audio");		
 		DLrequest.setOption("audio-format", "mp3");	
 		DLrequest.setOption("id");
 		
 		// Make request and return response
 		try {
+			
 			YoutubeDLResponse DLresponse = YoutubeDL.execute(DLrequest);
 			String stdOut = DLresponse.getOut(); // Executable output
 		} catch (YoutubeDLException e) {

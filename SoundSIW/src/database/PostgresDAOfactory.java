@@ -1,10 +1,8 @@
 package database;
 
-import objectDAO.ArtistaDAO;
 import objectDAO.BranoDAO;
 import objectDAO.BranoPlaylistDAO;
 import objectDAO.NewsDAO;
-import objectDAO.PlaylistDAO;
 import objectDAO.UtenteDAO;
 
 //@SuppressWarnings("deprecation")
@@ -38,21 +36,9 @@ public class PostgresDAOfactory extends DAOFactory {
 		return new UtenteDaoJDBC(dataSource);
 	}
 
-	
-
 	@Override
 	public BranoDAO getBranoDAO() {
 		return new BranoDaoJDBC(dataSource);
-	}
-
-	@Override
-	public ArtistaDAO getArtistaDAO() {
-		return new ArtistaDaoJDBC(dataSource);
-	}
-
-	@Override
-	public PlaylistDAO getPlaylistDAO() {
-		return new PlaylistDaoJDBC(dataSource);
 	}
 
 	@Override
