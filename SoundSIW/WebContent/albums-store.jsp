@@ -464,7 +464,6 @@
     <div class="one-music-songs-area mb-70">
         <div class="container">
         	
-            	<form method="post" action="MostraPlaylistServlet"> 
 				<c:forEach items="${songs}" var="item" varStatus="loop">
                 <div class="row">
                 <!-- Start Single Song Area -->
@@ -493,7 +492,7 @@
                
                 <!-- End Single Song Area -->
                 </c:forEach>
-                </form> 
+     
            
         </div>
     </div>
