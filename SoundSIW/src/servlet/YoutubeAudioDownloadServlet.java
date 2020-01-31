@@ -65,24 +65,7 @@ public class YoutubeAudioDownloadServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		/*
-		String paramUsername= (String) session.getAttribute("username");
 		
-		DAOFactory factory = DAOFactory.getDAOFactory(DAOFactory.POSTGRESQL);
-		BranoPlaylistDAO bd=factory.getBranoPlaylistDAO();
-		BranoPlaylist b=new BranoPlaylist(id,paramUsername);
-	    BranoPlaylist b1=bd.findByPlaylistAndNome(id,paramUsername);
-		if(b1==null)
-		{	
-			bd.save(b);
-			
-		}
-		else
-		{
-			System.out.println("Ciao!");
-		}
-		
-		*/
 	}
 
 }
