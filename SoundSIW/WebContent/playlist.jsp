@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<script src="js/CaricaBrano.js"></script>
+	<script src="js/RimuoviBranoPlaylist.js"></script>
     <!-- Title -->
     <title>SoundSiw</title>
 
@@ -141,47 +142,51 @@
     <!-- ##### Breadcumb Area End ##### -->
 
     <!-- ##### Events Area Start ##### -->
+   <br>
+   <br>
    
    <div class="one-music-songs-area mb-70">
         <div class="container">
         	
-            	<!--  <form method="post" action="YoutubeAudioDownloadServlet"> -->
 				<c:forEach items="${songs}" var="item" varStatus="loop">
                 <div class="row">
                 <!-- Start Single Song Area -->
-                <button style="background-color:black; width:300px;" class="btn single-song-area mb-30 d-flex flex-wrap align-items-end" type="submit" name="carica" onclick="CaricaBrano('${item.titolo}', '${item.id}')">   
                 <div class="col-12">    
-                		
-                        <div class="song-thumbnail">
+                	<div class="single-song-area mb-30 d-flex flex-wrap align-items-end">
+                        <button style="background-color:black;" class="btn single-song-area mb-10 d-flex flex-wrap align-items-end" type="submit" name="carica" onclick="CaricaBrano('${item.titolo}', '${item.id}')">
                             <img id="thumbnail-${loop.index}" src="${item.thumbnail}" alt="">
-                        </div>
-                        
+                        </button>
+                        <div class="song-play-area">
                             <div class="song-name">
                                 <p id="titolo-${loop.index}" value="${item.titolo}">${item.titolo}</p>
                                 <!-- <p1 id="id-${loop.index}" value="${item.id}">${item.id}</p1> -->
                                 
                             </div>
-                        
+                           
+                        </div>
+                        <div>
+                			<button class="btn oneMusic-btn mt-15" type="submit" name="rimuoviPlaylist" onclick="RimuoviBranoPlaylist('${item.titolo}', '${item.id}')">Rimuovi brano </button>
+                		</div>
+                   		
+                    </div>
                 </div>
-                </button>
-                      
+                
+               
                 </div>
                
                 <!-- End Single Song Area -->
                 </c:forEach>
-                <!--  </form> -->
+     
            
         </div>
     </div>
 
     <!-- ##### Newsletter & Testimonials Area End ##### -->
-	<div class="song-play-area song-name" style="position:fixed; right:200px; left: 200px; bottom:40px; z-index:3;">
-                        	  
+	             	  
                         	<div id="player" >
                             	
                         	</div>
-                        	  
-    </div>
+    
     
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area">
