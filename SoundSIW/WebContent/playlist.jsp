@@ -58,75 +58,61 @@
                             <div class="classycloseIcon">
                                 <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
                             </div>
-                            </div>
+                            
                             
 
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                	 <c:if test="${not loggato}">
+                                	<c:if test="${not loggato}">
                                     <li><a href="index.jsp">Home</a></li>
                                     <li><a href="registrazione.jsp">Registrati</a></li>
                                     <li><a href="login.jsp">Contattaci</a></li>
                                     <li><a href="login.jsp">News</a></li>
                                     <li><a href="login.jsp">Brani</a></li>
-                                     <li><a href="login.jsp">Playlist</a></li>
-                                    </c:if>
-                                </ul>
-                                
-                                </div>
-                                 <div class="classynav">
-                                <ul>
-								<c:if test="${not loggatoAdmin and loggato }">
-                                    <li><a href="index.jsp">Home</a></li>
-                                    <li><a href="MostraPlaylistServlet">Playlist</a></li>
-                                    <li><a href="contact.jsp">Contattaci</a></li>
-                                    <li><a href="MostraNewsServlet">News</a></li>
-                                    <li><a href="brani.jsp">Brani</a></li>
-                                    
-                                 </c:if>
-                                 </ul>
-                                
-                                </div>
-                                  <div class="classynav">
-                                <ul>
-                                 <c:if test="${loggatoAdmin }">
-                                  <li><a href="index.jsp">Home</a></li>
-                                    <li><a href="MostraPlaylistServlet">Playlist</a></li>
-                                    <li><a href="contact.jsp">Contattaci</a></li>
-                                    <li><a href="MostraNewsServlet">News</a></li>
-                                    <li><a href="GestioneNews.jsp">Gestione News</a></li>
-                                     </c:if>
-                                    
-                                </ul>
-                                
-                                </div>
-                                  <!-- Login -->
-                                <c:if test="${not loggato }"> 
-                                <div class="login-register-cart-button d-flex align-items-center">
+                                    <li><a href="login.jsp">Playlist</a></li>
                                     <!-- Login -->
-                                    <div class="login-register-btn mr-50">
-                                        <a href="login.jsp" id="loginBtn">Login</a>
-                                    </div>
-                                    </div>
+                                    <li><a href="login.jsp" id="loginBtn">Login</a></li>
                                     </c:if>
-
-								 <c:if test="${loggato }"> 
-                                <div class="login-register-cart-button d-flex align-items-center">
-                                    <!-- Logout -->
-                                    <div class="login-register-btn mr-50">
-                                        <a href="Logout">Logout</a>
-                                    </div>
-                                    </div>
-                                    </c:if>
-                                    </nav>
-
-                                   
-                                </div>
+                                </ul>
                             </div>
-                            <!-- Nav End -->
+                            
+                            <div class="classynav">
+                                <ul>
+									<c:if test="${not loggatoAdmin and loggato }">
+	                                    <li><a href="index.jsp">Home</a></li>
+	                                    <li><a href="MostraPlaylistServlet">Playlist</a></li>
+	                                    <li><a href="contact.jsp">Contattaci</a></li>
+	                                    <li><a href="MostraNewsServlet">News</a></li>
+	                                    <li><a href="brani.jsp">Brani</a></li>
+	                                    <!-- Logout -->
+	                                    <li><a href="Logout">Logout</a></li>
+	                                 </c:if>
+                             	</ul>
+                             </div>
+                             
+                             <div class="classynav">
+                                <ul>
+	                                 <c:if test="${loggatoAdmin }">
+	                                  <li><a href="index.jsp">Home</a></li>
+	                                    <li><a href="MostraPlaylistServlet">Playlist</a></li>
+	                                    <li><a href="contact.jsp">Contattaci</a></li>
+	                                    <li><a href="MostraNewsServlet">News</a></li>
+	                                    <li><a href="GestioneNews.jsp">Gestione News</a></li>
+	                                    <!-- Logout -->
+	                                    <li><a href="Logout">Logout</a></li>
+	                                 </c:if>
+                                </ul>
+                             </div>
+						</div>
+								 
+                   </nav>
+               </div>
+           </div>
+		</div>
+                      <!-- Nav End -->
 
-                        </div>
+                    
                    
                
     </header>
@@ -182,10 +168,10 @@
     </div>
 
     <!-- ##### Newsletter & Testimonials Area End ##### -->
-	             	  
-                        	<div id="player" >
-                            	
-                        	</div>
+    
+	 <div id="player">
+	 </div>
+
     
     
     <!-- ##### Footer Area Start ##### -->

@@ -33,7 +33,7 @@ function CaricaBrano(titolo, id) {
 function caricaPlayer(titolo, id){
 	console.log(titolo);
 	console.log(id);
-	string = '<div class = "container" style="position:fixed; left: 50px; bottom:40px; z-index:3;">';
+	string = '<div class = "container-fluid" style="position:fixed; bottom:40px; z-index:3;">';
 	string += '<div class="song-play-area">';
 	string += '<p>';
 	string += titolo;
