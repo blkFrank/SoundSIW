@@ -10,12 +10,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-	
-	<!-- Script -->
-	
 	<script src="js/CaricaBrano.js"></script>
-	<script src="js/AggiungiBranoPlaylist.js"></script>
-	
+	<script src="js/RimuoviBranoPlaylist.js"></script>
     <!-- Title -->
     <title>SoundSiw</title>
 
@@ -24,6 +20,7 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
+	<link href="css/loader.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -49,8 +46,8 @@
 
                         <!-- Nav brand -->
                         <a href="index.jsp" class="nav-brand"><img src="img/core-img/logo.png" alt=""></a>
-
-                        <!-- Navbar Toggler -->
+                                      
+       				<!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
                             <span class="navbarToggler"><span></span><span></span><span></span></span>
                         </div>
@@ -62,59 +59,62 @@
                             <div class="classycloseIcon">
                                 <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
                             </div>
+                            
+                            
 
                             <!-- Nav Start -->
-                             <div class="classynav">
+                            <div class="classynav">
                                 <ul>
-                                    <c:if test="${ loggatoAdmin or loggato }">
-                                        <li><a href="playlist.jsp">PlayList</a></li>
-                                        <li><a href="contact.jsp">Contattaci</a></li>
-	                                    <c:if test="${loggato }">
-	                                    	<li><a href="MostraNewsServlet">News</a></li>
-	                                    </c:if>
-                                    </c:if>
-                                    <c:if test="${loggatoAdmin }"> 
-                                		<li><a href="GestioneNews.jsp">Gestione news</a></li>
+                                	<c:if test="${not loggato}">
+                                    <li><a href="index.jsp">Home</a></li>
+                                    <li><a href="registrazione.jsp">Registrati</a></li>
+                                    <li><a href="login.jsp">Contattaci</a></li>
+                                    <li><a href="login.jsp">News</a></li>
+                                    <li><a href="login.jsp">Brani</a></li>
+                                    <li><a href="login.jsp">Playlist</a></li>
+                                    <!-- Login -->
+                                    <li><a href="login.jsp" id="loginBtn">Login</a></li>
                                     </c:if>
                                 </ul>
-
-                                <!-- Login/Register & Cart Button -->
-                                <div class="login-register-cart-button d-flex align-items-center">
-                                    <!-- Login/Register -->
-                                    <div class="login-register-btn mr-50">
-                                        <a href="registrazione.jsp" id="RegistratiBtn">Registrati</a>
-                                    </div>
-									<c:if test="${not loggato }">
-	                                    <!-- Login -->
-	                                    <div class="login-register-btn mr-50">
-	                                        <a href="login.jsp" id="loginBtn">Login</a>
-	                                    </div>
-                                    </c:if>
-                                    <c:if test="${loggato }"> 
-                                    	<div class="login-register-btn mr-50">
-                                    	
-                                        <a href="Logout">Logout</a>
-                                    	</div>
-                                    </c:if>
-                                 </div>
-                                    <!-- Cart Button -->
-                                    <div class="cart-btn">
-                                        
-                                    </div>
-                                </div>
                             </div>
-                            		
-
-                                   </nav>
-                                </div>
-                            </div>
-                            <!-- Nav End -->
-
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
+                            
+                            <div class="classynav">
+                                <ul>
+									<c:if test="${not loggatoAdmin and loggato }">
+	                                    <li><a href="index.jsp">Home</a></li>
+	                                    <li><a href="MostraPlaylistServlet">Playlist</a></li>
+	                                    <li><a href="contact.jsp">Contattaci</a></li>
+	                                    <li><a href="MostraNewsServlet">News</a></li>
+	                                    <li><a href="brani.jsp">Brani</a></li>
+	                                    <!-- Logout -->
+	                                    <li><a href="Logout">Logout</a></li>
+	                                 </c:if>
+                             	</ul>
+                             </div>
+                             
+                             <div class="classynav">
+                                <ul>
+	                                 <c:if test="${loggatoAdmin }">
+	                                  <li><a href="index.jsp">Home</a></li>
+	                                    <li><a href="MostraPlaylistServlet">Playlist</a></li>
+	                                    <li><a href="contact.jsp">Contattaci</a></li>
+	                                    <li><a href="MostraNewsServlet">News</a></li>
+	                                    <li><a href="GestioneNews.jsp">Gestione News</a></li>
+	                                    <!-- Logout -->
+	                                    <li><a href="Logout">Logout</a></li>
+	                                 </c:if>
+                                </ul>
+                             </div>
+						</div>
+								 
+                   </nav>
+				<div id="loading" class="loader" style="display: none;"></div>
+               </div>
+           </div>
+		</div>
+	
+                      <!-- Nav End -->	
+               
     </header>
     <!-- ##### Header Area End ##### -->
 	
@@ -130,221 +130,6 @@
     </section>
     
     <!-- ##### Breadcumb Area End ##### -->
-
-    <!-- ##### Album Catagory Area Start ##### -->
-    <!-- 
-    <section class="album-catagory section-padding-100-0">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="browse-by-catagories catagory-menu d-flex flex-wrap align-items-center mb-70">
-                        <a href="#" data-filter="*">Browse All</a>
-                        <a href="#" data-filter=".a" class="active">A</a>
-                        <a href="#" data-filter=".b">B</a>
-                        <a href="#" data-filter=".c">C</a>
-                        <a href="#" data-filter=".d">D</a>
-                        <a href="#" data-filter=".e">E</a>
-                        <a href="#" data-filter=".f">F</a>
-                        <a href="#" data-filter=".g">G</a>
-                        <a href="#" data-filter=".h">H</a>
-                        <a href="#" data-filter=".i">I</a>
-                        <a href="#" data-filter=".j">J</a>
-                        <a href="#" data-filter=".k">K</a>
-                        <a href="#" data-filter=".l">L</a>
-                        <a href="#" data-filter=".m">M</a>
-                        <a href="#" data-filter=".n">N</a>
-                        <a href="#" data-filter=".o">O</a>
-                        <a href="#" data-filter=".p">P</a>
-                        <a href="#" data-filter=".q">Q</a>
-                        <a href="#" data-filter=".r">R</a>
-                        <a href="#" data-filter=".s">S</a>
-                        <a href="#" data-filter=".t">T</a>
-                        <a href="#" data-filter=".u">U</a>
-                        <a href="#" data-filter=".v">V</a>
-                        <a href="#" data-filter=".w">W</a>
-                        <a href="#" data-filter=".x">X</a>
-                        <a href="#" data-filter=".y">Y</a>
-                        <a href="#" data-filter=".z">Z</a>
-                        <a href="#" data-filter=".number">0-9</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row oneMusic-albums">
-		-->
-                <!-- Single Album -->
-                <!--  
-                <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item t c p">
-                    <div class="single-album">
-                        <img src="img/bg-img/a1.jpg" alt="">
-                        <div class="album-info">
-                            <a href="#">
-                                <h5>The Cure</h5>
-                            </a>
-                            <p>Second Song</p>
-                        </div>
-                    </div>
-                </div>
-				-->
-                <!-- Single Album -->
-                <!--  
-                <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item s e q">
-                    <div class="single-album">
-                        <img src="img/bg-img/a2.jpg" alt="">
-                        <div class="album-info">
-                            <a href="#">
-                                <h5>Sam Smith</h5>
-                            </a>
-                            <p>Underground</p>
-                        </div>
-                    </div>
-                </div>
-				-->
-                <!-- Single Album -->
-                <!--  
-                <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item w f r">
-                    <div class="single-album">
-                        <img src="img/bg-img/a3.jpg" alt="">
-                        <div class="album-info">
-                            <a href="#">
-                                <h5>Will I am</h5>
-                            </a>
-                            <p>First</p>
-                        </div>
-                    </div>
-                </div>
-				-->
-                <!-- Single Album -->
-                <!-- 
-                <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item t g u">
-                    <div class="single-album">
-                        <img src="img/bg-img/a4.jpg" alt="">
-                        <div class="album-info">
-                            <a href="#">
-                                <h5>The Cure</h5>
-                            </a>
-                            <p>Second Song</p>
-                        </div>
-                    </div>
-                </div>
-				-->
-                <!-- Single Album -->
-                <!-- 
-                <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item d h v">
-                    <div class="single-album">
-                        <img src="img/bg-img/a5.jpg" alt="">
-                        <div class="album-info">
-                            <a href="#">
-                                <h5>DJ SMITH</h5>
-                            </a>
-                            <p>The Album</p>
-                        </div>
-                    </div>
-                </div>
-				-->
-                <!-- Single Album -->
-                <!--  
-                <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item t i x">
-                    <div class="single-album">
-                        <img src="img/bg-img/a6.jpg" alt="">
-                        <div class="album-info">
-                            <a href="#">
-                                <h5>The Ustopable</h5>
-                            </a>
-                            <p>Unplugged</p>
-                        </div>
-                    </div>
-                </div>
-				-->
-                <!-- Single Album -->
-                <!--  
-                <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item b j y">
-                    <div class="single-album">
-                        <img src="img/bg-img/a7.jpg" alt="">
-                        <div class="album-info">
-                            <a href="#">
-                                <h5>Beyonce</h5>
-                            </a>
-                            <p>Songs</p>
-                        </div>
-                    </div>
-                </div>
-				-->
-                <!-- Single Album -->
-                <!--  
-                <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item a k z">
-                    <div class="single-album">
-                        <img src="img/bg-img/a8.jpg" alt="">
-                        <div class="album-info">
-                            <a href="#">
-                                <h5>Aam Smith</h5>
-                            </a>
-                            <p>Underground</p>
-                        </div>
-                    </div>
-                </div>
-				-->
-                <!-- Single Album -->
-                <!--  
-                <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item w l number">
-                    <div class="single-album">
-                        <img src="img/bg-img/a9.jpg" alt="">
-                        <div class="album-info">
-                            <a href="#">
-                                <h5>Will I am</h5>
-                            </a>
-                            <p>First</p>
-                        </div>
-                    </div>
-                </div>
-				-->
-                <!-- Single Album -->
-                <!--  
-                <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item d m">
-                    <div class="single-album">
-                        <img src="img/bg-img/a10.jpg" alt="">
-                        <div class="album-info">
-                            <a href="#">
-                                <h5>DJ SMITH</h5>
-                            </a>
-                            <p>The Album</p>
-                        </div>
-                    </div>
-                </div>
-				-->
-                <!-- Single Album -->
-                <!--  
-                <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item t n">
-                    <div class="single-album">
-                        <img src="img/bg-img/a11.jpg" alt="">
-                        <div class="album-info">
-                            <a href="#">
-                                <h5>The Ustopable</h5>
-                            </a>
-                            <p>Unplugged</p>
-                        </div>
-                    </div>
-                </div>
-				-->
-                <!-- Single Album -->
-                <!--  
-                <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item b o">
-                    <div class="single-album">
-                        <img src="img/bg-img/a12.jpg" alt="">
-                        <div class="album-info">
-                            <a href="#">
-                                <h5>Beyonce</h5>
-                            </a>
-                            <p>Songs</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    -->
-    <!-- ##### Album Catagory Area End ##### -->
 
     <!-- ##### Buy Now Area Start ##### -->
       
@@ -365,21 +150,6 @@
     
     <!-- ##### Buy Now Area End ##### -->
 
-    <!-- ##### Add Area Start ##### -->
-    <!--  
-    <div class="add-area mb-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="adds">
-                        <a href="#"><img src="img/bg-img/add3.gif" alt=""></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    -->
-    <!-- ##### Add Area End ##### -->
     
     
     
@@ -390,7 +160,8 @@
 				<c:forEach items="${songs}" var="item" varStatus="loop">
                 <div class="row">
                 <!-- Start Single Song Area -->
-                <div class="col-12">    
+                <div class="col-12">  
+                	<div id="loading" class="loader" style="display: none;" ></div>  
                 	<div class="single-song-area mb-30 d-flex flex-wrap align-items-end">
                         <button style="background-color:black;" class="btn single-song-area mb-10 d-flex flex-wrap align-items-end" type="submit" name="carica" onclick="CaricaBrano('${item.titolo}', '${item.id}')">
                             <img id="thumbnail-${loop.index}" src="${item.thumbnail}" alt="">

@@ -8,14 +8,15 @@ function CaricaBrano(titolo, id) {
 
 	//avvia servlet di download 
 	
-	alert("Attendi il caricamento del brano!")
+	document.getElementById("loading").style.display="block";
+	
 	$.ajax({
 	        url: "YoutubeAudioDownloadServlet",
 	        type: 'POST',
 	        contentType: "application/json",
 	        data: json ,   
 	        success: function (data) {
-	          alert("Brano caricato con successo!");
+	          document.getElementById("loading").style.display="none";
 	          caricaPlayer(titolo,id);
 	        },
 	        error: function() {

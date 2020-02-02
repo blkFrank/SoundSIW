@@ -17,9 +17,11 @@
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
+    
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
+    <link href="css/loader.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -107,23 +109,24 @@
 						</div>
 								 
                    </nav>
+				<div id="loading" class="loader" style="display: none;" ></div>
                </div>
            </div>
 		</div>
-                      <!-- Nav End -->
-
-                    
-                   
+	
+                      <!-- Nav End -->	
                
     </header>
     <!-- ##### Header Area End ##### -->
+
 
     <!-- ##### Breadcumb Area Start ##### -->
     <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/emma2.jpg);">
         <div class="bradcumbContent">
             
             <h2>I tuoi brani</h2>
-        </div>
+            		
+       </div>
     </section>
     <!-- ##### Breadcumb Area End ##### -->
 
@@ -133,11 +136,11 @@
    
    <div class="one-music-songs-area mb-70">
         <div class="container">
-        	
+        	  			 	
 				<c:forEach items="${songs}" var="item" varStatus="loop">
                 <div class="row">
                 <!-- Start Single Song Area -->
-                <div class="col-12">    
+                <div class="col-12"> 
                 	<div class="single-song-area mb-30 d-flex flex-wrap align-items-end">
                         <button style="background-color:black;" class="btn single-song-area mb-10 d-flex flex-wrap align-items-end" type="submit" name="carica" onclick="CaricaBrano('${item.titolo}', '${item.id}')">
                             <img id="thumbnail-${loop.index}" src="${item.thumbnail}" alt="">
