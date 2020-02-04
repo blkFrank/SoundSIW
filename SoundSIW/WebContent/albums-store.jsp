@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<script src="js/CaricaBrano.js"></script>
-	<script src="js/RimuoviBranoPlaylist.js"></script>
+	<script src="js/AggiungiBranoPlaylist.js"></script>
     <!-- Title -->
     <title>SoundSiw</title>
 
@@ -119,16 +119,14 @@
     <!-- ##### Header Area End ##### -->
 	
     <!-- ##### Breadcumb Area Start ##### -->
-     
-    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/Ligabue.jpg);">
-        <!--  
-        <div class="bradcumbContent">
+        <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/Ligabue.jpg);">
+        <div class="bradcumbContent" items="${search}" var="search">
             
-        </div>
-        -->
-        
+            <h2>Risultati per: ${search}</h2>
+            		
+       </div>
     </section>
-    
+   
     <!-- ##### Breadcumb Area End ##### -->
 
     <!-- ##### Buy Now Area Start ##### -->

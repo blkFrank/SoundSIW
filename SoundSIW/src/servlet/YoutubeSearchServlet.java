@@ -30,6 +30,7 @@ public class YoutubeSearchServlet extends HttpServlet {
              if (searchResultList != null) {
             	youtubeUtil.prettyPrint(searchResultList.iterator(), queryTerm);
                 request.setAttribute("songs", youtubeUtil.convertType(searchResultList.iterator()));
+                request.setAttribute("search", queryTerm);
             }
        
 		RequestDispatcher dispacher = request.getRequestDispatcher("albums-store.jsp");
