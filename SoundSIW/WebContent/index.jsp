@@ -210,7 +210,7 @@
                     <div class="albums-slideshow owl-carousel">
                         <!-- Single Album -->
                         <div class="single-album">
-                            <img src="img/bg-img/news.jpg" alt="">
+                            <img src="img/png/news.png" alt="">
                             <div class="album-info">
                                <h5>NEWS</h5>
                                 
@@ -219,7 +219,7 @@
 
                         <!-- Single Album -->
                         <div class="single-album">
-                            <img src="img/bg-img/playlist.jpeg" alt="">
+                            <img src="img/png/playlist.png" alt="">
                             <div class="album-info">
                                 
                                     <h5>PLAYLIST</h5>
@@ -230,7 +230,7 @@
 
                         <!-- Single Album -->
                         <div class="single-album">
-                            <img src="img/bg-img/brani.png"alt="">
+                            <img src="img/png/track.png" alt="">
                             <div class="album-info">
                                
                                     <h5>BRANI</h5>
@@ -241,7 +241,7 @@
 
                         <!-- Single Album -->
                         <div class="single-album">
-                            <img src="img/bg-img/contatti.jpg" alt="">
+                            <img src="img/png/contactus.png" alt="">
                             <div class="album-info">
                                 
                                     <h5>CONTATTI</h5>
