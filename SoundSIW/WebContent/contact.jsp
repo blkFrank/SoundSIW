@@ -157,7 +157,7 @@
                             <div class="icon mr-30">
                                 <span class="icon-mail"></span>
                             </div>
-                            <p>cicciomafia96@gmail.com</p>
+                            <p>soundsiw2020@gmail.com</p>
                         </div>
 
                         <!-- Contact Social Info -->
@@ -176,7 +176,7 @@
                 <div class="col-12 col-lg-9">
                     <!-- ##### Google Maps ##### -->
                     <div class="map-area mb-100">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3028.635005467549!2d16.224458965323258!3d39.35918932950217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133f99a2cb39a49b%3A0x1a529d60540e6425!2sUnical!5e1!3m2!1sit!2sit!4v1575912750818!5m2!1sit!2sit" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe> allowfullscreen></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3028.635005467549!2d16.224458965323258!3d39.35918932950217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133f99a2cb39a49b%3A0x1a529d60540e6425!2sUnical!5e1!3m2!1sit!2sit!4v1575912750818!5m2!1sit!2sit" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen></iframe></iframe>
                     </div>
                 </div>
 
@@ -201,26 +201,26 @@
                 <div class="col-12">
                     <!-- Contact Form Area -->
                     <div class="contact-form-area">
-                        <form action="#" method="post">
+                        <form action="contattiServlet" method="GET">
                             <div class="row">
                                 <div class="col-md-6 col-lg-4">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="nome" placeholder="Nome">
+                                        <input type="text" class="form-control" name="nome" placeholder="Nome">
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-lg-4">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" id="email" placeholder="E-mail">
+                                        <input type="email" class="form-control" name="email" placeholder="E-mail">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="oggetto" placeholder="Oggetto">
+                                        <input type="text" class="form-control" name="oggetto" placeholder="Oggetto">
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <textarea name="message" class="form-control" id="messaggio" cols="30" rows="10" placeholder="Messaggio"></textarea>
+                                        <textarea class="form-control" name="messaggio" cols="30" rows="10" placeholder="Messaggio"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-12 text-center">

@@ -170,7 +170,7 @@
                 <div class="col-12">
                     <div class="section-heading style-2">
                         
-                        <h2>2,50 al giorno,18 a settimana, la musica è parte integrante della nostra vita!</h2>
+                        <h2>2,5 ore al giorno, 18 a settimana, la musica è parte integrante della nostra vita!</h2>
                     </div>
                 </div>
             </div>
@@ -192,7 +192,7 @@
                         <!-- Section Heading -->
                         <div class="section-heading white text-left mb-30">
                             <p>Sound</p>
-                            <h2>Sound è una piattaforma online che ti offre un esperienza musicale a 360°, puoi ascoltare musica , visualizzare notizie e creare playlist personalizzate!</h2>
+                            <h2>Sound è una piattaforma online che ti offre un' esperienza musicale a 360°, puoi ascoltare musica , visualizzare notizie e creare playlist personalizzate!</h2>
                         </div>
                         
                         
