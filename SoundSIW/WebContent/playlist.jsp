@@ -172,8 +172,17 @@
 
     <!-- ##### Newsletter & Testimonials Area End ##### -->
     
-	 <div id="player">
-	 </div>
+	<div class="container-fluid" id="containerTrack" style="position:fixed; bottom:40px; z-index:3; display:none">
+		<div class="song-play-area">
+			<div class="song-name">
+				<p id="songName">
+				</p>
+			</div>
+			<audio id="song" preload="auto" controls autoplay>
+				<source id="srcAudio" src="audio/test.mp3">
+			</audio>
+		</div>
+	</div>
 
     
     

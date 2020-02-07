@@ -227,16 +227,17 @@
     <!-- ##### Song Area End ##### -->
 						<!-- ##### Player Area Start ##### -->
 			
-                        	<div id="player" >
-                            	<!--  
-                            	<div class="song-name" var="playerItem">
-                                	<p>${playerItem.titolo}</p>
-                            	</div>
-                            	<audio preload="auto" controls>
-	    							<source src="audio/hcVU07nOhw4.mp3">
-	    						</audio>
-	    						  -->
-                        	</div>
+	<div class="container-fluid" id="containerTrack" style="position:fixed; bottom:70px; z-index:3; display:none">
+		<div class="song-play-area">
+			<div class="song-name">
+				<p id="songName">
+				</p>
+			</div>
+			<audio id="song" preload="auto" controls autoplay>
+				<source id="srcAudio" src="audio/test.mp3">
+			</audio>
+		</div>
+	</div>
                         	  
     					
     		

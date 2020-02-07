@@ -34,15 +34,10 @@ function CaricaBrano(titolo, id) {
 function caricaPlayer(titolo, id){
 	console.log(titolo);
 	console.log(id);
-	string = '<div class = "container-fluid" style="position:fixed; bottom:40px; z-index:3;">';
-	string += '<div class="song-play-area">';
-	string += '<p>';
-	string += titolo;
-	string += '</p> ';
-	string += ' <audio preload="auto" controls autoplay>';
-	string += '<source src="http://localhost:8081/'+ id + '.mp3">';
-	string += '</audio>';
-	string += '</div></div>';
-	
-	$("#player").html(string);
+	var string = "http://localhost:8081/" + id + ".mp3";
+	console.log(string);
+	document.getElementById("containerTrack").style.display="block";
+	document.getElementById("songName").innerText = titolo;
+	document.getElementById("srcAudio").src = string;
+	document.getElementById("song").load();
 }
