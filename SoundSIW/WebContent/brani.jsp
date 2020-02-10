@@ -12,6 +12,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<script src="js/CaricaBrano.js"></script>
 	<script src="js/RimuoviBranoPlaylist.js"></script>
+	<script src="js/SearchProxy.js"></script>
     <!-- Title -->
     <title>SoundSiw</title>
 
@@ -135,6 +136,7 @@
                  		<div class="col-lg-5">
 	             			<input type="text" id="search" name="search" placeholder="Cerca la tua canzone..." autocomplete="off" class="form-control" size="20" />
 	             		</div>
+	             		<!-- onchange="SearchProxy()"  -->
 	         		</div>
 	         		<div class="row justify-content-lg-center">
 	             		<div class="col-sm-12 col-lg-3">

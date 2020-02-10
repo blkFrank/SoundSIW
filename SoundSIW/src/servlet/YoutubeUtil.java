@@ -217,5 +217,23 @@ public class YoutubeUtil {
     	
     	return brani;
     }
-     
+    /*
+    public static List<Ricerca> convertToSearch (Iterator<SearchResult> iteratorSearchResults) {
+    	List<Ricerca> brani = new ArrayList<Ricerca>();
+    	
+    	while (iteratorSearchResults.hasNext()) {
+
+            SearchResult singleVideo = iteratorSearchResults.next();
+            ResourceId rId = singleVideo.getId();
+            // Confirm that the result represents a video. Otherwise, the
+            // item vorrwill not contain a video ID.
+            if (rId.getKind().equals("youtube#video")) {
+            	String titolo = singleVideo.getSnippet().getTitle();
+            	brani.add(titolo);
+            }
+        }
+    	
+    	return brani;
+    }
+     */
 }

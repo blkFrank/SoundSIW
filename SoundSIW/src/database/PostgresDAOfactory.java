@@ -3,6 +3,7 @@ package database;
 import objectDAO.BranoDAO;
 import objectDAO.BranoPlaylistDAO;
 import objectDAO.NewsDAO;
+import objectDAO.RicercaDAO;
 import objectDAO.UtenteDAO;
 
 //@SuppressWarnings("deprecation")
@@ -54,6 +55,11 @@ public class PostgresDAOfactory extends DAOFactory {
 	@Override
 	public NewsDAO getNewsDAO() {
 		return new NewsDaoJDBC(dataSource);
+	}
+
+	@Override
+	public RicercaDAO getRicercaDAO() {
+		return new RicercaDaoJDBC(dataSource);
 	}
 	
 
