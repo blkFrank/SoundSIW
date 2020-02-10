@@ -204,13 +204,15 @@
     </section>
     <!-- ##### Featured Artist Area End ##### -->
 
-  
+  		<c:if test="${ loggato }">
             <div class="row">
                 <div class="col-12">
                     <div class="albums-slideshow owl-carousel">
                         <!-- Single Album -->
                         <div class="single-album">
-                            <img src="img/png/news.png" alt="">
+                        	<a href="MostraNewsServlet">
+                            	<img src="img/png/news.png" alt="">
+                            </a>
                             <div class="album-info">
                                <h5>NEWS</h5>
                                 
@@ -219,7 +221,9 @@
 
                         <!-- Single Album -->
                         <div class="single-album">
-                            <img src="img/png/playlist.png" alt="">
+                        	<a href="MostraPlaylistServlet">
+                            	<img src="img/png/playlist.png" alt="">
+                            </a>
                             <div class="album-info">
                                 
                                     <h5>PLAYLIST</h5>
@@ -230,7 +234,9 @@
 
                         <!-- Single Album -->
                         <div class="single-album">
-                            <img src="img/png/track.png" alt="">
+                        	<a href="brani.jsp">
+                            	<img src="img/png/track.png" alt="">
+                            </a>
                             <div class="album-info">
                                
                                     <h5>BRANI</h5>
@@ -241,7 +247,9 @@
 
                         <!-- Single Album -->
                         <div class="single-album">
-                            <img src="img/png/contactus.png" alt="">
+                        	<a href="contact.jsp">
+                            	<img src="img/png/contactus.png" alt="">
+                            </a>
                             <div class="album-info">
                                 
                                     <h5>CONTATTI</h5>
@@ -253,6 +261,65 @@
                     </div>
                 </div>
             </div>
+		</c:if>
+		<c:if test="${not loggato }">
+			<div class="row">
+                <div class="col-12">
+                    <div class="albums-slideshow owl-carousel">
+                        <!-- Single Album -->
+                        <div class="single-album">
+                        	<a href="login.jsp">
+                            	<img src="img/png/news.png" alt="">
+                            </a>
+                            <div class="album-info">
+                               <h5>NEWS</h5>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Single Album -->
+                        <div class="single-album">
+                        	<a href="login.jsp">
+                            	<img src="img/png/playlist.png" alt="">
+                            </a>
+                            <div class="album-info">
+                                
+                                    <h5>PLAYLIST</h5>
+                                
+                                
+                            </div>
+                        </div>
+
+                        <!-- Single Album -->
+                        <div class="single-album">
+                        	<a href="login.jsp">
+                            	<img src="img/png/track.png" alt="">
+                            </a>
+                            <div class="album-info">
+                               
+                                    <h5>BRANI</h5>
+                                
+                                
+                            </div>
+                        </div>
+
+                        <!-- Single Album -->
+                        <div class="single-album">
+                        	<a href="login.jsp">
+                            	<img src="img/png/contactus.png" alt="">
+                            </a>
+                            <div class="album-info">
+                                
+                                    <h5>CONTATTI</h5>
+                               
+                                
+                            </div>
+                        </div>
+ 
+                    </div>
+                </div>
+            </div>
+		</c:if>
    
    <br>
    <br>
