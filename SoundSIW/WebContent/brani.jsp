@@ -12,7 +12,11 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<script src="js/CaricaBrano.js"></script>
 	<script src="js/RimuoviBranoPlaylist.js"></script>
-	<script src="js/SearchProxy.js"></script>
+	<script src="js/AutocompleteSearch.js"></script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" type="text/css" />
+	<script src="//code.jquery.com/jquery-2.1.4.js" type="text/javascript"></script>
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js" type="text/javascript"></script>
+								
     <!-- Title -->
     <title>SoundSiw</title>
 
@@ -134,9 +138,8 @@
 	            <div class="container">
              		<div class="row justify-content-lg-center">
                  		<div class="col-lg-5">
-	             			<input type="text" id="search" name="search" placeholder="Cerca la tua canzone..." autocomplete="off" class="form-control" size="20" />
+	             			<input onkeypress="Autocomplete()" type="text" id="search" name="search" placeholder="Cerca la tua canzone..." autocomplete="off" class="form-control" size="20" />
 	             		</div>
-	             		<!-- onchange="SearchProxy()"  -->
 	         		</div>
 	         		<div class="row justify-content-lg-center">
 	             		<div class="col-sm-12 col-lg-3">
@@ -146,7 +149,7 @@
 	         	</div>
 	        </form>
             
-        </div>
+        </div> 
     </section>
     <!-- ##### Contact Area End ##### -->
 	<br>
@@ -178,8 +181,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- ##### Footer Area Start ##### -->
 
     <!-- ##### All Javascript Script ##### -->
-    <!-- jQuery-2.2.4 js -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
     <script src="js/bootstrap/popper.min.js"></script>
     <!-- Bootstrap js -->
