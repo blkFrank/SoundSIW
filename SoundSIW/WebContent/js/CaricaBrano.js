@@ -17,7 +17,7 @@ function CaricaBrano(titolo, id) {
 	        data: json ,   
 	        success: function (data) {
 	          document.getElementById("loading").style.display="none";
-	          caricaPlayer(titolo,id);
+	          caricaPlayer(titolo,data);
 	        },
 	        error: function() {
 	            alert("Errore! Aggiorna la pagina!");
@@ -31,13 +31,11 @@ function CaricaBrano(titolo, id) {
 }
 
 
-function caricaPlayer(titolo, id){
+function caricaPlayer(titolo, data){
 	console.log(titolo);
-	console.log(id);
-	var string = "http://localhost:8081/" + id + ".mp3";
-	console.log(string);
+	console.log(data);
 	document.getElementById("containerTrack").style.display="block";
 	document.getElementById("songName").innerText = titolo;
-	document.getElementById("srcAudio").src = string;
+	document.getElementById("srcAudio").src = data;
 	document.getElementById("song").load();
 }

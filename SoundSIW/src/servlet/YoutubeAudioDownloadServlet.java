@@ -17,17 +17,53 @@ import com.sapher.youtubedl.YoutubeDLException;
 import com.sapher.youtubedl.YoutubeDLRequest;
 import com.sapher.youtubedl.YoutubeDLResponse;
 
+/**
+ * Servlet implementation class YoutubeAudioDownloadServlet1
+ */
 @WebServlet("/YoutubeAudioDownloadServlet")
-
 public class YoutubeAudioDownloadServlet extends HttpServlet {
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public YoutubeAudioDownloadServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response, String videoUrl) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doPost(request,response);
-	}
-	@Override
-	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		
+		// Build request
+		
+		YoutubeDLRequest DLrequest = new YoutubeDLRequest(videoUrl);
+		DLrequest.setOption("extract-audio");	
+		DLrequest.setOption("get-url");		
+		DLrequest.setOption("audio-format", "mp3");
+		
+		try {
+			YoutubeDLResponse DLresponse = YoutubeDL.execute(DLrequest);
+			String json = new Gson().toJson(DLresponse.getOut());
+			response.setContentType("application/json");
+		    response.setCharacterEncoding("UTF-8");
+			response.getWriter().write(json);
+		} catch (YoutubeDLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		JsonElement data = new Gson().fromJson(request.getReader(),JsonElement.class);
 		HttpSession session = request.getSession();
 		
@@ -36,26 +72,7 @@ public class YoutubeAudioDownloadServlet extends HttpServlet {
 		System.out.println("Scarico il brano con id " + id);
 		
 		String videoUrl = "https://www.youtube.com/watch?v=" + id;
-		// Destination directory
-		ServletContext application = getServletConfig().getServletContext();
-		String directory = System.getProperty("user.home") +"/git/SoundSIW/SoundSIW/WebContent/audio";
-		System.out.println("Scarico il brano in " + directory);
-		// Build request
-		YoutubeDLRequest DLrequest = new YoutubeDLRequest(videoUrl, directory);
-		DLrequest.setOption("extract-audio");		
-		DLrequest.setOption("audio-format", "mp3");	
-		DLrequest.setOption("id");
-		
-		// Make request and return response
-		try {
-			
-			YoutubeDLResponse DLresponse = YoutubeDL.execute(DLrequest);
-			String stdOut = DLresponse.getOut(); // Executable output
-		} catch (YoutubeDLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+		doGet(request, response, videoUrl);
 	}
 
 }

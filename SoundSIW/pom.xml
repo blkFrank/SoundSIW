@@ -77,7 +77,15 @@
 	<dependency>
         <groupId>javax.mail</groupId>
         <artifactId>mail</artifactId>
-        <version>1.4.4</version>
     </dependency>
   </dependencies>
+  <dependencyManagement>
+  	<dependencies>
+  		<dependency>
+  			<groupId>javax.mail</groupId>
+  			<artifactId>mail</artifactId>
+  			<version>1.4.4</version>
+  		</dependency>
+  	</dependencies>
+  </dependencyManagement>
 </project>
