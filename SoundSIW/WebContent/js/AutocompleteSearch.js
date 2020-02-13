@@ -12,7 +12,7 @@ function Autocomplete() {
 		        data: jQuery.extend({
 		            q: request.term
 		        }, {  }),
-		        success: function(data){
+		        success: function(data){ 
 		        	//console.log(data[1]);
 		           	obj = data[1];
 					jQuery.each( obj, function( key, value ) {
