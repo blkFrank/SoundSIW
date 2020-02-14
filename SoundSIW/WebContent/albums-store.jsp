@@ -12,6 +12,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<script src="js/CaricaBrano.js"></script>
 	<script src="js/RimuoviBranoPlaylist.js"></script>
+	<script src="js/AggiungiBranoPlaylist.js"></script>
     <!-- Title -->
     <title>SoundSiw</title>
 

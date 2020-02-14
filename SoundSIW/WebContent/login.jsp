@@ -142,7 +142,7 @@
                                     <small id="emailHelp" class="form-text text-muted"><i class="fa fa-lock mr-2"></i>We'll never share your email with anyone else.</small>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputUsurname1">Usurname</label>
+                                    <label for="exampleInputUsurname1">Username</label>
                                     <input type="username" class="form-control" name="username" id="username" placeholder="Username">
                                 </div>
                                 <div class="form-group">
