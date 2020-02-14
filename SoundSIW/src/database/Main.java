@@ -17,9 +17,5 @@ public class Main {
 			 util.dropDatabase();
 			util.createDatabase();
 			
-			
-			
-			
-			
 		}		
 }

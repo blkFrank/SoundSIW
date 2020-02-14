@@ -164,7 +164,7 @@
                 <div class="col-12">  
                 	<div id="loading" class="loader" style="display: none;" ></div>  
                 	<div class="single-song-area mb-30 d-flex flex-wrap align-items-end">
-                        <button style="background-color:black;" class="btn single-song-area mb-10 d-flex flex-wrap align-items-end" type="submit" name="carica"  onclick="CaricaBrano('${item.titolo}')">
+                        <button style="background-color:black;" class="btn single-song-area mb-10 d-flex flex-wrap align-items-end" type="submit" name="carica"  onclick="CaricaBrano('${item.titolo}', '${item.id}' )">
                             <img id="thumbnail-${loop.index}" src="${item.thumbnail}" alt="">
                         </button>
                         <div class="song-play-area">

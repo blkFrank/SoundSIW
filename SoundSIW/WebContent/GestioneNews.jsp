@@ -144,6 +144,10 @@
                                     <textarea class="form-control" name="contenuto" id="contenuto" cols="120" placeholder="Inserisci contenuto news"></textarea>
                                     </label>
                                 </div>
+                                <div class="form-group">
+                                    <label for="exampleInputLinkImg">Link Immagine</label>
+                                    <input type="text" class="form-control" name="linkImg" id="linkImg" aria-describedby="linkImgHelp" placeholder="Inserisci link immagine">
+                                </div>
                                 <button type="submit" class="btn oneMusic-btn mt-30">Aggiungi</button>
                                 	
                             </form>
