@@ -38,4 +38,8 @@ function caricaPlayer(titolo, data){
 	document.getElementById("songName").innerText = titolo;
 	document.getElementById("srcAudio").src = data;
 	document.getElementById("song").load();
+	
 }
+
+	
+	

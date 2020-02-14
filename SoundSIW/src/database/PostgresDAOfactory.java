@@ -1,5 +1,6 @@
 package database;
 
+import objectDAO.BranoAscoltatoDAO;
 import objectDAO.BranoDAO;
 import objectDAO.BranoPlaylistDAO;
 import objectDAO.NewsDAO;
@@ -60,6 +61,9 @@ public class PostgresDAOfactory extends DAOFactory {
 	@Override
 	public RicercaDAO getRicercaDAO() {
 		return new RicercaDaoJDBC(dataSource);
+	}
+	public BranoAscoltatoDAO getBranoAscoltatoDAO() {
+		return new BranoAscoltatoDaoJDBC(dataSource);
 	}
 	
 

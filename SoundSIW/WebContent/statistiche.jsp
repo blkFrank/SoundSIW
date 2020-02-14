@@ -12,6 +12,11 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<script src="js/CaricaBrano.js"></script>
 	<script src="js/RimuoviBranoPlaylist.js"></script>
+	<script src="js/AutocompleteSearch.js"></script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" type="text/css" />
+	<script src="//code.jquery.com/jquery-2.1.4.js" type="text/javascript"></script>
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js" type="text/javascript"></script>
+								
     <!-- Title -->
     <title>SoundSiw</title>
 
@@ -20,7 +25,6 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
-	<link href="css/loader.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -109,141 +113,97 @@
 						</div>
 								 
                    </nav>
-				<div id="loading" class="loader" style="display: none;"></div>
                </div>
            </div>
 		</div>
-	
-                      <!-- Nav End -->	
+                      <!-- Nav End -->
+                   
                
     </header>
     <!-- ##### Header Area End ##### -->
-	
+
     <!-- ##### Breadcumb Area Start ##### -->
-     
-    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/Ligabue.jpg);">
-        <!--  
+    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/j-ax.jpg);">
         <div class="bradcumbContent">
-            
+           
+            <h2>Statistiche</h2>
         </div>
-        -->
-        
     </section>
-    
-    <!-- ##### Breadcumb Area End ##### -->
+    <div class="col-12">
+                    <div class="elements-title mb-70">
+                        <h2>Loaders</h2>
+                    </div>
+                </div>
 
-    <!-- ##### Buy Now Area Start ##### -->
-      
-    
-        <div class="container">
-            <div class="row">
-
-           
-            <div class="row">
                 <div class="col-12">
-                    <div class="load-more-btn text-center">
-                       <!--   <a href="#" class="btn oneMusic-btn">Load More <i class="fa fa-angle-double-right"></i></a> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- ##### Buy Now Area End ##### -->
+                    <!-- Loaders Area Start -->
+                    <div class="our-skills-area">
+                        <div class="row">
 
-    
-    
-    
-    <!-- ##### Song Area Start ##### -->
-    <div class="one-music-songs-area mb-70">
-        <div class="container">
-        	
-				<c:forEach items="${songs}" var="item" varStatus="loop">
-                <div class="row">
-                <!-- Start Single Song Area -->
-                <div class="col-12">  
-                	<div id="loading" class="loader" style="display: none;" ></div>  
-                	<div class="single-song-area mb-30 d-flex flex-wrap align-items-end">
-                        <button style="background-color:black;" class="btn single-song-area mb-10 d-flex flex-wrap align-items-end" type="submit" name="carica"  onclick="CaricaBrano('${item.titolo}')">
-                            <img id="thumbnail-${loop.index}" src="${item.thumbnail}" alt="">
-                        </button>
-                        <div class="song-play-area">
-                            <div class="song-name">
-                                <p id="titolo-${loop.index}" value="${item.titolo}">${item.titolo}</p>
-                                <!-- <p1 id="id-${loop.index}" value="${item.id}">${item.id}</p1> -->
-                                
+                            <!-- Single Skills Area -->
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="single-skils-area mb-100">
+                                    <div id="circle" class="circle" data-value="0.75">
+                                        <div class="skills-text">
+                                            <span>75%</span>
+                                            <p>Good Music</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                           
+
+                            <!-- Single Skills Area -->
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="single-skils-area mb-100">
+                                    <div id="circle2" class="circle" data-value="0.83">
+                                        <div class="skills-text">
+                                            <span>83%</span>
+                                            <p>Amazing Artists</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Skills Area -->
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="single-skils-area mb-100">
+                                    <div id="circle3" class="circle" data-value="0.25">
+                                        <div class="skills-text">
+                                            <span>25%</span>
+                                            <p>Concerts</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Skills Area -->
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="single-skils-area mb-100">
+                                    <div id="circle4" class="circle" data-value="0.95">
+                                        <div class="skills-text">
+                                            <span>95%</span>
+                                            <p>Superstars</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                			<button class="btn oneMusic-btn mt-15" type="submit" name="caricaPlaylist"  onclick="AggiungiBranoPlaylist('${item.titolo}', '${item.id}')">Aggiungi alla playlist </button>
-                		</div>
-                   		
                     </div>
                 </div>
-                
-               
-                </div>
-               
-                <!-- End Single Song Area -->
-                </c:forEach>
-     
-           
-        </div>
-    </div>
     
-    
-    <!--  
-    <div class="one-music-songs-area mb-70">
-        <div class="container">
-        	
-            <c:forEach items="${songs}" var="item" varStatus="loop">
-                <div class="row">
-                
-                <button style="background-color:black; width:300px;" class="btn single-song-area mb-30 d-flex flex-wrap align-items-end" type="submit" name="carica" onclick="CaricaBrano('${item.titolo}', '${item.id}')">   
-                <div class="col-12">    
-                		
-                        <div class="song-thumbnail">
-                            <img id="thumbnail-${loop.index}" src="${item.thumbnail}" alt="">
-                        </div>
-                        
-                            <div class="song-name">
-                                <p id="titolo-${loop.index}" value="${item.titolo}">${item.titolo}</p>
-                            
-                            </div>
-                        
-                </div>
-                </button>
-              
-                <button style="left:120px" class="btn oneMusic-btn mt-30" type="submit" name="caricaPlaylist" onclick="AggiungiBranoPlaylist('${item.titolo}', '${item.id}')">Aggiungi alla playlist </button>
-               
-               
-                </div>
-               
-                </c:forEach>
-           
-        </div>
-    </div>
-    -->
-    <!-- ##### Song Area End ##### -->
-						<!-- ##### Player Area Start ##### -->
-			
-	<div class="container-fluid" id="containerTrack" style="position:fixed; bottom:70px; z-index:3; display:none">
-		<div class="song-play-area">
-			<div class="song-name">
-				<p id="songName">
-				</p>
-			</div>
-			<audio id="song" preload="auto" controls autoplay>
-				<source id="srcAudio" src="audio/test.mp3">
-			</audio>
-		</div>
-	</div>
-                        	  
-    					
-    		
-    				
-   	 					<!-- ##### Player Area End ##### -->
+    </section>
+    <!-- ##### Contact Area End ##### -->
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+    <!-- ##### Contact Area Start ##### -->
+  
+    <!-- ##### Contact Area End ##### -->
+
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area">
         <div class="container">
@@ -251,8 +211,8 @@
                 <div class="col-12 col-md-6">
                     <a href="#"><img src="img/core-img/logo.png" alt=""></a>
                     <p class="copywrite-text"><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved 
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                 </div>
 
                 
@@ -262,8 +222,6 @@
     <!-- ##### Footer Area Start ##### -->
 
     <!-- ##### All Javascript Script ##### -->
-    <!-- jQuery-2.2.4 js -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
     <script src="js/bootstrap/popper.min.js"></script>
     <!-- Bootstrap js -->
@@ -274,4 +232,3 @@
     <script src="js/active.js"></script>
 </body>
 
-</html>

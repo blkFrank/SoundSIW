@@ -14,12 +14,10 @@ public class Main {
 		
 			UtilDao util = factory.getUtilDAO();
 
-			util.dropDatabase();
+			 util.dropDatabase();
 			util.createDatabase();
 			
-			BranoDAO bd=factory.getBranoDAO();
-		
-			UtenteDAO u=factory.getUtenteDAO();
+			
 			
 			
 			

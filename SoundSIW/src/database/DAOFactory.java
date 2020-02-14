@@ -1,5 +1,6 @@
 package database;
 
+import objectDAO.BranoAscoltatoDAO;
 import objectDAO.BranoDAO;
 import objectDAO.BranoPlaylistDAO;
 import objectDAO.NewsDAO;
@@ -34,5 +35,5 @@ public abstract class DAOFactory {
 	public abstract BranoPlaylistDAO getBranoPlaylistDAO();
 	public abstract NewsDAO getNewsDAO();
 	public abstract RicercaDAO getRicercaDAO();
-	
+	public abstract BranoAscoltatoDAO getBranoAscoltatoDAO();
 }
