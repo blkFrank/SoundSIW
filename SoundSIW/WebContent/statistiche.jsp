@@ -13,7 +13,7 @@
 	<script src="js/CaricaBrano.js"></script>
 	<script src="js/RimuoviBranoPlaylist.js"></script>
 	<script src="js/AutocompleteSearch.js"></script>
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" type="text/css" />
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" type="text/css" />
 	<script src="//code.jquery.com/jquery-2.1.4.js" type="text/javascript"></script>
 	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js" type="text/javascript"></script>
 								
@@ -104,7 +104,7 @@
 	                                    <li><a href="contact.jsp">Contattaci</a></li>
 	                                    <li><a href="MostraNewsServlet">News</a></li>
 	                                    <li><a href="GestioneNews.jsp">Gestione News</a></li>
-	                                    <li><a href="statistiche.jsp">Statistiche</a></li>
+	                                    <li><a href="MostraUtentePiuAttivo">Statistiche</a></li>
 	                                    <!-- Logout -->
 	                                    <li><a href="Logout">Logout</a></li>
 	                                 </c:if>
@@ -131,62 +131,62 @@
     </section>
     <div class="col-12">
                     <div class="elements-title mb-70">
-                        <h2>Loaders</h2>
+                       
                     </div>
                 </div>
 
                 <div class="col-12">
                     <!-- Loaders Area Start -->
+                    
                     <div class="our-skills-area">
                         <div class="row">
-
+								
+					
                             <!-- Single Skills Area -->
-                            <div class="col-12 col-sm-6 col-lg-3">
-                                <div class="single-skils-area mb-100">
-                                    <div id="circle" class="circle" data-value="0.75">
-                                        <div class="skills-text">
-                                            <span>75%</span>
-                                            <p>Good Music</p>
+                            
+                            <div class="col-12 col-sm-6 col-lg-4" >
+                                <div class="single-skils-area mb-100" >
+                                    <div id="circle" class="circle" data-value="${grafico}">
+                                        <div class="skills-text" >
+                                            <span>${percentuale}%</span>
+                                            
                                         </div>
+                                        <p>${utente}</p>
+                                        <p>UTENTE PIU' ATTIVO</p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+							
+                            <!-- Single Skills Area -->
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="single-skils-area mb-100">
+                                    <div id="circle2" class="circle" data-value="${graficoRicerca}">
+                                        <div class="skills-text">
+                                            <span>${percentualeRicerca}%</span>
+                                            
+                                        </div>
+                                        <p>${ricerca} </p>
+                                         <p>RICERCA PIU' ESEGUITA</p>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Single Skills Area -->
-                            <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="col-12 col-sm-6 col-lg-4">
                                 <div class="single-skils-area mb-100">
-                                    <div id="circle2" class="circle" data-value="0.83">
+                                    <div id="circle3" class="circle" data-value="${graficoBrano}">
                                         <div class="skills-text">
-                                            <span>83%</span>
-                                            <p>Amazing Artists</p>
+                                            <span>${percentualeBrano}%</span>
+                                           
                                         </div>
+                                        <p>${brano}</p>
+                                        <p>BRANO PIU' ASCOLTATO</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Single Skills Area -->
-                            <div class="col-12 col-sm-6 col-lg-3">
-                                <div class="single-skils-area mb-100">
-                                    <div id="circle3" class="circle" data-value="0.25">
-                                        <div class="skills-text">
-                                            <span>25%</span>
-                                            <p>Concerts</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Skills Area -->
-                            <div class="col-12 col-sm-6 col-lg-3">
-                                <div class="single-skils-area mb-100">
-                                    <div id="circle4" class="circle" data-value="0.95">
-                                        <div class="skills-text">
-                                            <span>95%</span>
-                                            <p>Superstars</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>

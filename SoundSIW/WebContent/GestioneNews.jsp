@@ -66,7 +66,7 @@
                                         <li><a href="contact.jsp">Contattaci</a></li>
 	                                    <li><a href="MostraNewsServlet">News</a></li>
                                 		<li><a href="GestioneNews.jsp">Gestione news</a></li>
-                                		<li><a href="statistiche.jsp">Statistiche</a></li>
+                                		<li><a href="MostraUtentePiuAttivo">Statistiche</a></li>
                                     </c:if>
                                 </ul>
 

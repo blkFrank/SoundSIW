@@ -12,6 +12,9 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<script src="js/CaricaBrano.js"></script>
 	<script src="js/RimuoviBranoPlaylist.js"></script>
+	<script src="js/AggiungiBranoPlaylist.js"></script>
+	<script src="js/prendiBrano.js"></script>
+	
     <!-- Title -->
     <title>SoundSiw</title>
 
@@ -100,7 +103,7 @@
 	                                    <li><a href="contact.jsp">Contattaci</a></li>
 	                                    <li><a href="MostraNewsServlet">News</a></li>
 	                                    <li><a href="GestioneNews.jsp">Gestione News</a></li>
-	                                    <li><a href="statistiche.jsp">Statistiche</a></li>
+	                                    <li><a href="MostraUtentePiuAttivo">Statistiche</a></li>
 	                                    <!-- Logout -->
 	                                    <li><a href="Logout">Logout</a></li>
 	                                 </c:if>
@@ -164,7 +167,7 @@
                 <div class="col-12">  
                 	<div id="loading" class="loader" style="display: none;" ></div>  
                 	<div class="single-song-area mb-30 d-flex flex-wrap align-items-end">
-                        <button style="background-color:black;" class="btn single-song-area mb-10 d-flex flex-wrap align-items-end" type="submit" name="carica"  onclick="CaricaBrano('${item.titolo}', '${item.id}' )">
+                        <button style="background-color:black;" class="btn single-song-area mb-10 d-flex flex-wrap align-items-end" type="submit" name="carica"  onclick="CaricaBrano('${item.titolo}', '${item.id}' );prendiBrano('${item.titolo}');">
                             <img id="thumbnail-${loop.index}" src="${item.thumbnail}" alt="">
                         </button>
                         <div class="song-play-area">
