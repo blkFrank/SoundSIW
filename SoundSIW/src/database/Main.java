@@ -17,11 +17,6 @@ public class Main {
 			util.dropDatabase();
 			util.createDatabase();
 			
-			BranoDAO bd=factory.getBranoDAO();
-		
-			UtenteDAO u=factory.getUtenteDAO();
-			
-			
-			
+			System.out.println("Reset Database Eseguito");
 		}		
 }

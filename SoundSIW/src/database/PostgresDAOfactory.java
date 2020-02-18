@@ -3,6 +3,7 @@ package database;
 import objectDAO.BranoDAO;
 import objectDAO.BranoPlaylistDAO;
 import objectDAO.NewsDAO;
+import objectDAO.RecensioneDAO;
 import objectDAO.RicercaDAO;
 import objectDAO.UtenteDAO;
 
@@ -60,6 +61,12 @@ public class PostgresDAOfactory extends DAOFactory {
 	@Override
 	public RicercaDAO getRicercaDAO() {
 		return new RicercaDaoJDBC(dataSource);
+	}
+
+	@Override
+	public RecensioneDAO getRecensioneDAO() {
+		// TODO Auto-generated method stub
+		return new RecensioneDaoJDBC(dataSource);
 	}
 	
 

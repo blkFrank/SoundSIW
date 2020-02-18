@@ -28,8 +28,10 @@ import com.google.api.services.youtube.model.Thumbnail;
 import com.google.gson.Gson;
 import objectDAO.BranoDAO;
 import objectDAO.BranoPlaylistDAO;
+import objectDAO.RecensioneDAO;
 import object.Brano;
 import object.BranoPlaylist;
+import object.Recensione;
 import database.DatabaseManager;
 
 
@@ -40,6 +42,21 @@ import database.DatabaseManager;
 public class MostraPlaylistServlet extends HttpServlet {
 	
 	private static YoutubeUtil youtubeUtil;
+	
+	private static List<Recensione> getRecensione(List<Brano> songResult, RecensioneDAO reviewDao){
+		List<Recensione> results = new ArrayList <Recensione>();
+		for (int i=0; i<songResult.size(); i++) {
+			Recensione review = reviewDao.findByPrimaryKey(songResult.get(i).getId()); 
+			if (review != null) {
+				results.add(review);
+			} else {
+				results.add(new Recensione());
+			}
+			
+		}
+		
+		return results;
+	}
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -59,17 +76,18 @@ public class MostraPlaylistServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	
-	
+
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		String paramUsername= (String) session.getAttribute("username");
 		BranoPlaylistDAO t = DatabaseManager.getInstance().getDaoFactory().getBranoPlaylistDAO();
 		BranoDAO x= DatabaseManager.getInstance().getDaoFactory().getBranoDAO();
-		List<BranoPlaylist> temp = t.findAllByPlaylist(paramUsername);
-		
-		
+		RecensioneDAO reviewDao = DatabaseManager.getInstance().getDaoFactory().getRecensioneDAO();
+
+		List<BranoPlaylist> temp = t.findAllByPlaylist(paramUsername);	
 		List<Brano> b=new ArrayList<Brano>();
+		List<Recensione> reviewResult;
 		
 		for(BranoPlaylist b1: temp)
 		{
@@ -78,7 +96,7 @@ public class MostraPlaylistServlet extends HttpServlet {
 	            String queryTerm = b1.getNome();
 	            // Define the API request for retrieving search results.
 	            List<SearchResult> searchResultList = youtubeUtil.search(queryTerm);
-	          
+	     
 	            if (searchResultList != null) {
 	                youtubeUtil.prettyPrint(searchResultList.iterator(), queryTerm);
 	                b.add(youtubeUtil.convertElement(searchResultList.iterator()));
@@ -87,8 +105,10 @@ public class MostraPlaylistServlet extends HttpServlet {
 	            th.printStackTrace();
 	        }
 		
-		}
+		}		
+		reviewResult = getRecensione(b, reviewDao);
 		request.setAttribute("songs", b);
+		request.setAttribute("reviews", reviewResult);
 		RequestDispatcher dispacher = request.getRequestDispatcher("playlist.jsp");
 		dispacher.forward(request, response);
 
