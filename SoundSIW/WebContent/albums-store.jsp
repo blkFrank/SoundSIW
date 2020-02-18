@@ -13,6 +13,7 @@
 	<script src="js/CaricaBrano.js"></script>
 	<script src="js/AggiungiBranoPlaylist.js"></script>
 	<script src="js/AggiungiRecensione.js"></script>
+	<script src="js/prendiBrano.js"></script>	
     <!-- Title -->
     <title>SoundSiw</title>
 
@@ -101,6 +102,7 @@
 	                                    <li><a href="contact.jsp">Contattaci</a></li>
 	                                    <li><a href="MostraNewsServlet">News</a></li>
 	                                    <li><a href="GestioneNews.jsp">Gestione News</a></li>
+	                                    <li><a href="MostraUtentePiuAttivo">Statistiche</a></li>
 	                                    <!-- Logout -->
 	                                    <li><a href="Logout">Logout</a></li>
 	                                 </c:if>
@@ -157,7 +159,6 @@
     <!-- ##### Song Area Start ##### -->
     <div class="one-music-songs-area mb-70">
         <div class="container">
-        	
 				<c:forEach items="${songs}" var="item" varStatus="status" >
                 <!-- START ITEM AREA -->
                 <div class="row" id="review" value="${reviews[status.index]}">
@@ -165,7 +166,7 @@
 	                <div class="col-12">  
 	                	<div id="loading" class="loader" style="display: none;" ></div>  
 	                	<div class="single-song-area mb-30 d-flex flex-wrap align-items-end">
-	                        <button style="background-color:black;" class="btn single-song-area mb-10 d-flex flex-wrap align-items-end" type="submit" name="carica" onclick="CaricaBrano('${item.titolo}', '${item.id}')">
+	                        <button style="background-color:black;" class="btn single-song-area mb-10 d-flex flex-wrap align-items-end" type="submit" name="carica" onclick="CaricaBrano('${item.titolo}', '${item.id}');prendiBrano('${item.titolo}');">
 	                            <img src="${item.thumbnail}" alt="">
 	                        </button>
 	                        <div class="song-play-area">

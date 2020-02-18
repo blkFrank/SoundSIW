@@ -9,6 +9,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
 
+import javax.servlet.http.HttpSession;
+
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
@@ -19,7 +21,12 @@ import com.google.api.services.youtube.model.SearchListResponse;
 import com.google.api.services.youtube.model.SearchResult;
 import com.google.api.services.youtube.model.Thumbnail;
 
+import database.DAOFactory;
 import object.Brano;
+import object.BranoAscoltato;
+import object.Ricerca;
+import objectDAO.BranoAscoltatoDAO;
+import objectDAO.RicercaDAO;
 
 public class YoutubeUtil {
 	private static YoutubeUtil istance = null;
@@ -142,9 +149,12 @@ public class YoutubeUtil {
         while (iteratorSearchResults.hasNext()) {
 
             SearchResult singleVideo = iteratorSearchResults.next();
+            
             ResourceId rId = singleVideo.getId();
-
-            // Confirm that the result represents a video. Otherwise, the
+            
+           
+            
+	 		// Confirm that the result represents a video. Otherwise, the
             // item will not contain a video ID.
             if (rId.getKind().equals("youtube#video")) {
                 Thumbnail thumbnail = singleVideo.getSnippet().getThumbnails().getDefault();

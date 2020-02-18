@@ -22,11 +22,12 @@ public class NewsDaoJDBC implements NewsDAO {
 	public void save(News news) {
 		Connection connection = this.dataSource.getConnection();
 		try {
-			String insert = "insert into news(titolo, data, contenuto) values (?,?,?)";
+			String insert = "insert into news(titolo, data, contenuto, linkImg) values (?,?,?,?)";
 			PreparedStatement statement = connection.prepareStatement(insert);
 			statement.setString(1, news.getTitolo());
 			statement.setDate(2, news.getData());
 			statement.setString(3, news.getContenuto());
+			statement.setString(4, news.getLinkImg());
 			statement.executeUpdate();
 		} catch(SQLException e) {
 			throw new PersistenceException(e.getMessage());
@@ -55,7 +56,8 @@ public class NewsDaoJDBC implements NewsDAO {
 				news = new News();
 				news.setTitolo(result.getString("titolo"));	
 				news.setData(result.getDate("data"));
-				news.setContenuto(result.getString("contenuto"));		
+				news.setContenuto(result.getString("contenuto"));
+				news.setLinkImg(result.getString("linkImg"));
 			}
 			
 		} catch (SQLException e) {
@@ -85,6 +87,7 @@ public class NewsDaoJDBC implements NewsDAO {
 				news.setTitolo(result.getString("titolo"));	
 				news.setData(result.getDate("data"));
 				news.setContenuto(result.getString("contenuto"));	
+				news.setLinkImg(result.getString("linkImg"));
 				newsList.add(news);
 			}
 		} catch (SQLException e) {
@@ -103,11 +106,12 @@ public class NewsDaoJDBC implements NewsDAO {
 	public void update(News news) {
 		Connection connection = this.dataSource.getConnection();
 		try {
-			String update = "update news SET titolo = ?, data = ?, contenuto = ? WHERE titolo = ?";
+			String update = "update news SET titolo = ?, data = ?, contenuto = ?, linkImg = ?, WHERE titolo = ?";
 			PreparedStatement statement = connection.prepareStatement(update);
 			statement.setString(1, news.getTitolo());
 			statement.setDate(2, news.getData());
 			statement.setString(3, news.getContenuto());
+			statement.setString(4, news.getLinkImg());
 			statement.executeUpdate();
 			
 		} catch (SQLException e) {

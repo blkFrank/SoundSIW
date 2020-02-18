@@ -16,7 +16,6 @@ public class Main {
 
 			util.dropDatabase();
 			util.createDatabase();
-			
 			System.out.println("Reset Database Eseguito");
 		}		
 }

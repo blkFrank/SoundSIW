@@ -99,6 +99,7 @@
 	                                    <li><a href="contact.jsp">Contattaci</a></li>
 	                                    <li><a href="MostraNewsServlet">News</a></li>
 	                                    <li><a href="GestioneNews.jsp">Gestione News</a></li>
+	                                    <li><a href="MostraUtentePiuAttivo">Statistiche</a></li>
 	                                    <!-- Logout -->
 	                                    <li><a href="Logout">Logout</a></li>
 	                                 </c:if>
@@ -141,7 +142,7 @@
                                     <small id="emailHelp" class="form-text text-muted"><i class="fa fa-lock mr-2"></i>We'll never share your email with anyone else.</small>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputUsurname1">Usurname</label>
+                                    <label for="exampleInputUsurname1">Username</label>
                                     <input type="username" class="form-control" name="username" id="username" placeholder="Username">
                                 </div>
                                 <div class="form-group">

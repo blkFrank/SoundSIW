@@ -23,7 +23,10 @@ public class UtilDao {
 				    + "drop table if exists branoPlaylist;"
 				    + "drop table if exists news;"
 				    + "drop table if exists ricerca;"
-				    + "drop table if exists recensione;";
+				    + "drop table if exists recensione;"
+				    + "drop table if exists news;"
+				    + "drop table if exists ricerca;"
+				    + "drop table if exists branoAscoltato;";
 			PreparedStatement statement = connection.prepareStatement(delete);
 		
 			statement.executeUpdate();
@@ -58,11 +61,16 @@ public class UtilDao {
 		
 			String create = "create SEQUENCE sequenza_id;"
 					+ "create table utente(\"username\" varchar(255) primary key, password varchar(255),email varchar(255),registrato boolean);"
+					+ "create table utente(\"username\" varchar(255) primary key, password varchar(255),email varchar(255),registrato boolean);"
+					+ "create table playlist(\"idplaylist\" varchar(255) primary key,nome varchar(255),utente varchar(255));"
 					+ "create table brano(\"nome\" varchar(255),artista varchar(255),durata varchar(255));"
 					+ "create table branoPlaylist(nomeBrano varchar(255),idplaylist varchar(255));"
 			        + "create table news( \"titolo\"varchar(255) primary key,data date,contenuto varchar(3000));"
 					+ "create table ricerca(\"id\" int primary key, utente varchar(255), risultato varchar(255));"
-					+ "create table recensione(\"idbrano\" varchar(255) primary key, oneStar int, twoStars int, threeStars int, fourStars int, fiveStars int);";
+					+ "create table recensione(\"idbrano\" varchar(255) primary key, oneStar int, twoStars int, threeStars int, fourStars int, fiveStars int);"
+			        + "create table news( \"titolo\"varchar(255) primary key,data date,contenuto varchar(3000), linkImg varchar(255));"
+					+ "create table ricerca(utente varchar(255), risultato varchar(255));"
+					+ "create table branoAscoltato(nomeBrano varchar(1000));"; 
 			PreparedStatement statement = connection.prepareStatement(create);
 		
 			statement.executeUpdate();
@@ -97,6 +105,9 @@ public class UtilDao {
 			statement = connection.prepareStatement(delete);
 			
 			delete = "delete FROM ricerca";
+			statement = connection.prepareStatement(delete);
+			
+			delete = "delete FROM branoAscoltato";
 			statement = connection.prepareStatement(delete);
 			
 			statement.executeUpdate();

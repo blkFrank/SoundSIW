@@ -13,7 +13,7 @@
 	<script src="js/CaricaBrano.js"></script>
 	<script src="js/RimuoviBranoPlaylist.js"></script>
 	<script src="js/AutocompleteSearch.js"></script>
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" type="text/css" />
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" type="text/css" />
 	<script src="//code.jquery.com/jquery-2.1.4.js" type="text/javascript"></script>
 	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js" type="text/javascript"></script>
 								
@@ -126,31 +126,71 @@
     <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/j-ax.jpg);">
         <div class="bradcumbContent">
            
-            <h2>Cerca il tuo brano</h2>
+            <h2>Statistiche</h2>
         </div>
     </section>
-    <!-- ##### Breadcumb Area End ##### -->
-	<br>
-	<br>
-    <!-- ##### Contact Area Start ##### -->
-    <section class="contact-area section-padding-100-0">
-        <div class="container">
-             <form method="post" action="YoutubeSearchServlet">
-	            <div class="container">
-             		<div class="row justify-content-lg-center">
-                 		<div class="col-lg-5">
-	             			<input onkeyup="Autocomplete()" onkeypress="Autocomplete()" type="text" id="search" name="search" placeholder="Cerca la tua canzone..." autocomplete="off" class="form-control" size="20" />
-	             		</div>
-	         		</div>
-	         		<div class="row justify-content-lg-center">
-	             		<div class="col-sm-12 col-lg-3">
-	         			<input type="submit" value="Cerca" class="btn oneMusic-btn mt-30">
-	         			</div>
-	         		</div>
-	         	</div>
-	        </form>
-             
-        </div> 
+    <div class="col-12">
+                    <div class="elements-title mb-70">
+                       
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <!-- Loaders Area Start -->
+                    
+                    <div class="our-skills-area">
+                        <div class="row">
+								
+					
+                            <!-- Single Skills Area -->
+                            
+                            <div class="col-12 col-sm-6 col-lg-4" >
+                                <div class="single-skils-area mb-100" >
+                                    <div id="circle" class="circle" data-value="${grafico}">
+                                        <div class="skills-text" >
+                                            <span>${percentuale}%</span>
+                                            
+                                        </div>
+                                        <p>${utente}</p>
+                                        <p>UTENTE PIU' ATTIVO</p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+							
+                            <!-- Single Skills Area -->
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="single-skils-area mb-100">
+                                    <div id="circle2" class="circle" data-value="${graficoRicerca}">
+                                        <div class="skills-text">
+                                            <span>${percentualeRicerca}%</span>
+                                            
+                                        </div>
+                                        <p>${ricerca} </p>
+                                         <p>RICERCA PIU' ESEGUITA</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Skills Area -->
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="single-skils-area mb-100">
+                                    <div id="circle3" class="circle" data-value="${graficoBrano}">
+                                        <div class="skills-text">
+                                            <span>${percentualeBrano}%</span>
+                                           
+                                        </div>
+                                        <p>${brano}</p>
+                                        <p>BRANO PIU' ASCOLTATO</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                </div>
+    
     </section>
     <!-- ##### Contact Area End ##### -->
 	<br>
@@ -192,4 +232,3 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="js/active.js"></script>
 </body>
 
-</html>

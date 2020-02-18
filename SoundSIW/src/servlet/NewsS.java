@@ -26,12 +26,12 @@ public class NewsS extends HttpServlet {
 	 	String paramTitolo = req.getParameter("titolo");
 	 	String paramData = req.getParameter("data"); 
 	 	String paramContenuto= req.getParameter("contenuto");
+	 	String paramLinkImg = req.getParameter("linkImg");
 	 	
 	 	
 	 	
 	 	
-	 	
-	 	if(paramTitolo=="" || paramData=="" || paramContenuto=="" ) {
+	 	if(paramTitolo=="" || paramData=="" || paramContenuto=="" || paramLinkImg=="") {
 	 		resp.sendRedirect("GestioneNews.jsp");
 	 	}
 	 		
@@ -40,7 +40,7 @@ public class NewsS extends HttpServlet {
 		 	DAOFactory factory = DAOFactory.getDAOFactory(DAOFactory.POSTGRESQL);
 		 	NewsDAO newsDao = factory.getNewsDAO();
 		 	Date d = Date.valueOf(paramData);
-		 	News news = new News(paramTitolo, d , paramContenuto);
+		 	News news = new News(paramTitolo, d , paramContenuto, paramLinkImg);
 		 	newsDao.save(news);
 		 	System.out.println("News Aggiunta");
 		 	resp.sendRedirect("GestioneNews.jsp");

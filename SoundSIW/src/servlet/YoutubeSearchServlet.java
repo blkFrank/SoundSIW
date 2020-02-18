@@ -5,12 +5,11 @@ import com.google.api.services.youtube.model.SearchResult;
 
 import database.DatabaseManager;
 import object.Brano;
-import object.BranoPlaylist;
 import object.Recensione;
-import objectDAO.BranoDAO;
-import objectDAO.BranoPlaylistDAO;
 import objectDAO.RecensioneDAO;
-
+import database.DAOFactory;
+import object.Ricerca;
+import objectDAO.RicercaDAO;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +19,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/YoutubeSearchServlet")
 
@@ -56,16 +56,22 @@ public class YoutubeSearchServlet extends HttpServlet {
     		RecensioneDAO reviewDao = DatabaseManager.getInstance().getDaoFactory().getRecensioneDAO();
             List<Brano> songResult;
             List<Recensione> reviewResult;
-            if (searchResultList != null) {
+            RicercaDAO ricercaDao = DatabaseManager.getInstance().getDaoFactory().getRicercaDAO();
+ 		 	HttpSession session = request.getSession();
+ 			String paramUsername= (String) session.getAttribute("username");
+ 			Ricerca ricerca;
+            if (searchResultList != null) {    		 	
+     		 	ricerca=new Ricerca(paramUsername,queryTerm);
+    	 		ricercaDao.save(ricerca);
             	songResult = youtubeUtil.convertType(searchResultList.iterator());
             	reviewResult = getRecensione(songResult, reviewDao);
             	youtubeUtil.prettyPrint(searchResultList.iterator(), queryTerm);
             	request.setAttribute("songs", songResult);
             	request.setAttribute("reviews", reviewResult);
             }
-            
-		RequestDispatcher dispacher = request.getRequestDispatcher("albums-store.jsp");
-		dispacher.forward(request, response);
+ 		 	
+ 		 	RequestDispatcher dispacher = request.getRequestDispatcher("albums-store.jsp");
+ 		 	dispacher.forward(request, response);
     }
 
    

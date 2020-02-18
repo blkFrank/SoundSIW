@@ -66,6 +66,7 @@
                                         <li><a href="contact.jsp">Contattaci</a></li>
 	                                    <li><a href="MostraNewsServlet">News</a></li>
                                 		<li><a href="GestioneNews.jsp">Gestione news</a></li>
+                                		<li><a href="MostraUtentePiuAttivo">Statistiche</a></li>
                                     </c:if>
                                 </ul>
 
@@ -142,6 +143,10 @@
                                     Contenuto
                                     <textarea class="form-control" name="contenuto" id="contenuto" cols="120" placeholder="Inserisci contenuto news"></textarea>
                                     </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputLinkImg">Link Immagine</label>
+                                    <input type="text" class="form-control" name="linkImg" id="linkImg" aria-describedby="linkImgHelp" placeholder="Inserisci link immagine">
                                 </div>
                                 <button type="submit" class="btn oneMusic-btn mt-30">Aggiungi</button>
                                 	

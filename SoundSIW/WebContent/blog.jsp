@@ -98,7 +98,9 @@
 	                                    <li><a href="MostraPlaylistServlet">Playlist</a></li>
 	                                    <li><a href="contact.jsp">Contattaci</a></li>
 	                                    <li><a href="MostraNewsServlet">News</a></li>
+	                                
 	                                    <li><a href="GestioneNews.jsp">Gestione News</a></li>
+	                                    <li><a href="MostraUtentePiuAttivo">Statistiche</a></li>
 	                                    <!-- Logout -->
 	                                    <li><a href="Logout">Logout</a></li>
 	                                 </c:if>
@@ -137,8 +139,8 @@
 		                    <div class="single-blog-post mb-100 wow fadeInUp" data-wow-delay="100ms">
 					                <!-- Post Thumb -->
 		                        <div class="blog-post-thumb mt-30">
-		                            <a href="#"><img src="img/bg-img/blog2.jpg" alt=""></a>
-		                            <!-- Post Date -->
+		                            <a href="#"><img src=${item.linkImg } alt="" width="1200" height="635"></a>
+		                            <!-- Post Date --> 
 		                            <div class="post-date">
 		                                <h6>${item.data}</h6>
 		                            </div>
@@ -193,7 +195,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- Active js -->
     <script src="js/active.js"></script>
     
-    <script src="js/MostraNews.js"></script>
     
 </body>
 
