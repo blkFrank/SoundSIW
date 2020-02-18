@@ -139,7 +139,7 @@
 	            <div class="container">
              		<div class="row justify-content-lg-center">
                  		<div class="col-lg-5">
-	             			<input onkeypress="Autocomplete()" type="text" id="search" name="search" placeholder="Cerca la tua canzone..." autocomplete="off" class="form-control" size="20" />
+	             			<input onkeyup="Autocomplete()" onkeypress="Autocomplete()" type="text" id="search" name="search" placeholder="Cerca la tua canzone..." autocomplete="off" class="form-control" size="20" />
 	             		</div>
 	         		</div>
 	         		<div class="row justify-content-lg-center">

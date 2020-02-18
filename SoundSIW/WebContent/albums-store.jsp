@@ -13,8 +13,7 @@
 	<script src="js/CaricaBrano.js"></script>
 	<script src="js/RimuoviBranoPlaylist.js"></script>
 	<script src="js/AggiungiBranoPlaylist.js"></script>
-	<script src="js/prendiBrano.js"></script>
-	
+	<script src="js/prendiBrano.js"></script>	
     <!-- Title -->
     <title>SoundSiw</title>
 
