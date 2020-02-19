@@ -1,10 +1,9 @@
 function prendiBrano(titolo) {
 
 	
-console.log(titolo);
+	console.log(titolo);
 	
 	var json = JSON.stringify(titolo);
-	alert("Premi Ok per confermare!")
 	$.ajax({
 	        url: "AggiungiBranoAscoltato",
 	        type: 'POST',
@@ -12,10 +11,9 @@ console.log(titolo);
 	        data: json ,   
 	        success: function (data) {
 	        	
-	          
 	        },
 	        error: function() {
-	            alert("errore")
+	           
 	        }
 	    });
 

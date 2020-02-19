@@ -20,7 +20,7 @@ function CaricaBrano(titolo, id) {
 	          caricaPlayer(titolo,data);
 	        },
 	        error: function() {
-	            alert("Errore! Aggiorna la pagina!");
+	            alert("Errore! Prova di nuovo!");
 	        }
 	    });
 	

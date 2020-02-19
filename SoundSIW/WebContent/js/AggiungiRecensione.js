@@ -16,7 +16,7 @@ function AggiungiRecensione(id,stella) {
 	        	document.getElementById("review").value=data;
 	        },
 	        error: function() {
-	        	alert("Errore! Aggiorna la pagina!");
+	        	alert("Errore! Riprova ad aggiungere la recensione!");
 	        }
 	    });
 	

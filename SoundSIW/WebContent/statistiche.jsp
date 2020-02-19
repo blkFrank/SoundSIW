@@ -67,16 +67,16 @@
                             
 
                             <!-- Nav Start -->
-                            <div class="classynav">
+                           <div class="classynav">
                                 <ul>
                                 	<c:if test="${not loggato}">
                                     <li><a href="index.jsp">Home</a></li>
-                                    <li><a href="registrazione.jsp">Registrati</a></li>
-                                    <li><a href="login.jsp">Contattaci</a></li>
-                                    <li><a href="login.jsp">News</a></li>
                                     <li><a href="login.jsp">Brani</a></li>
                                     <li><a href="login.jsp">Playlist</a></li>
+                                    <li><a href="login.jsp">News</a></li>
+                                    <li><a href="login.jsp">Contattaci</a></li>
                                     <!-- Login -->
+                                    <li><a href="registrazione.jsp">Registrati</a></li>
                                     <li><a href="login.jsp" id="loginBtn">Login</a></li>
                                     </c:if>
                                 </ul>
@@ -86,10 +86,10 @@
                                 <ul>
 									<c:if test="${not loggatoAdmin and loggato }">
 	                                    <li><a href="index.jsp">Home</a></li>
-	                                    <li><a href="MostraPlaylistServlet">Playlist</a></li>
-	                                    <li><a href="contact.jsp">Contattaci</a></li>
-	                                    <li><a href="MostraNewsServlet">News</a></li>
 	                                    <li><a href="brani.jsp">Brani</a></li>
+	                                    <li><a href="MostraPlaylistServlet">Playlist</a></li>
+	                                    <li><a href="MostraNewsServlet">News</a></li>
+	                                    <li><a href="contact.jsp">Contattaci</a></li>
 	                                    <!-- Logout -->
 	                                    <li><a href="Logout">Logout</a></li>
 	                                 </c:if>
@@ -100,11 +100,12 @@
                                 <ul>
 	                                 <c:if test="${loggatoAdmin }">
 	                                  <li><a href="index.jsp">Home</a></li>
+	                                    <li><a href="brani.jsp">Brani</a></li>
 	                                    <li><a href="MostraPlaylistServlet">Playlist</a></li>
-	                                    <li><a href="contact.jsp">Contattaci</a></li>
 	                                    <li><a href="MostraNewsServlet">News</a></li>
 	                                    <li><a href="GestioneNews.jsp">Gestione News</a></li>
 	                                    <li><a href="MostraUtentePiuAttivo">Statistiche</a></li>
+	                                    <li><a href="contact.jsp">Contattaci</a></li>
 	                                    <!-- Logout -->
 	                                    <li><a href="Logout">Logout</a></li>
 	                                 </c:if>

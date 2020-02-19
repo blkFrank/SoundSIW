@@ -61,39 +61,48 @@
                             <!-- Nav Start -->
                               <div class="classynav">
                                 <ul>
-                                    <c:if test="${loggatoAdmin}">
-                                        <li><a href="playlist.jsp">PlayList</a></li>
-                                        <li><a href="contact.jsp">Contattaci</a></li>
-	                                    <li><a href="MostraNewsServlet">News</a></li>
-                                		<li><a href="GestioneNews.jsp">Gestione news</a></li>
-                                		<li><a href="MostraUtentePiuAttivo">Statistiche</a></li>
+                                	<c:if test="${not loggato}">
+                                    <li><a href="index.jsp">Home</a></li>
+                                    <li><a href="login.jsp">Brani</a></li>
+                                    <li><a href="login.jsp">Playlist</a></li>
+                                    <li><a href="login.jsp">News</a></li>
+                                    <li><a href="login.jsp">Contattaci</a></li>
+                                    <!-- Login -->
+                                    <li><a href="registrazione.jsp">Registrati</a></li>
+                                    <li><a href="login.jsp" id="loginBtn">Login</a></li>
                                     </c:if>
                                 </ul>
-
-                                <!-- Login/Register & Cart Button -->
-                                <div class="login-register-cart-button d-flex align-items-center">
-                                    <!-- Login/Register -->
-                                    <div class="login-register-btn mr-50">
-                                        <a href="registrazione.jsp" id="RegistratiBtn">Registrati</a>
-                                    </div>
-									<c:if test="${not loggato }">
-	                                    <!-- Login -->
-	                                    <div class="login-register-btn mr-50">
-	                                        <a href="login.jsp" id="loginBtn">Login</a>
-	                                    </div>
-                                    </c:if>
-                                    <c:if test="${loggato }"> 
-                                    	<div class="login-register-btn mr-50">
-                                    	
-                                        <a href="Logout">Logout</a>
-                                    	</div>
-                                    </c:if>
-                                 </div>
-                                    <!-- Cart Button -->
-                                    <div class="cart-btn">
-                                        
-                                    </div>
-                                </div>
+                            </div>
+                            
+                            <div class="classynav">
+                                <ul>
+									<c:if test="${not loggatoAdmin and loggato }">
+	                                    <li><a href="index.jsp">Home</a></li>
+	                                    <li><a href="brani.jsp">Brani</a></li>
+	                                    <li><a href="MostraPlaylistServlet">Playlist</a></li>
+	                                    <li><a href="MostraNewsServlet">News</a></li>
+	                                    <li><a href="contact.jsp">Contattaci</a></li>
+	                                    <!-- Logout -->
+	                                    <li><a href="Logout">Logout</a></li>
+	                                 </c:if>
+                             	</ul>
+                             </div>
+                             
+                             <div class="classynav">
+                                <ul>
+	                                 <c:if test="${loggatoAdmin }">
+	                                  <li><a href="index.jsp">Home</a></li>
+	                                    <li><a href="brani.jsp">Brani</a></li>
+	                                    <li><a href="MostraPlaylistServlet">Playlist</a></li>
+	                                    <li><a href="MostraNewsServlet">News</a></li>
+	                                    <li><a href="GestioneNews.jsp">Gestione News</a></li>
+	                                    <li><a href="MostraUtentePiuAttivo">Statistiche</a></li>
+	                                    <li><a href="contact.jsp">Contattaci</a></li>
+	                                    <!-- Logout -->
+	                                    <li><a href="Logout">Logout</a></li>
+	                                 </c:if>
+                                </ul>
+                             </div>
                             </div>
                             		
 

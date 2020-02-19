@@ -69,12 +69,12 @@
                                 <ul>
                                 	<c:if test="${not loggato}">
                                     <li><a href="index.jsp">Home</a></li>
-                                    <li><a href="registrazione.jsp">Registrati</a></li>
-                                    <li><a href="login.jsp">Contattaci</a></li>
-                                    <li><a href="login.jsp">News</a></li>
                                     <li><a href="login.jsp">Brani</a></li>
                                     <li><a href="login.jsp">Playlist</a></li>
+                                    <li><a href="login.jsp">News</a></li>
+                                    <li><a href="login.jsp">Contattaci</a></li>
                                     <!-- Login -->
+                                    <li><a href="registrazione.jsp">Registrati</a></li>
                                     <li><a href="login.jsp" id="loginBtn">Login</a></li>
                                     </c:if>
                                 </ul>
@@ -84,10 +84,10 @@
                                 <ul>
 									<c:if test="${not loggatoAdmin and loggato }">
 	                                    <li><a href="index.jsp">Home</a></li>
-	                                    <li><a href="MostraPlaylistServlet">Playlist</a></li>
-	                                    <li><a href="contact.jsp">Contattaci</a></li>
-	                                    <li><a href="MostraNewsServlet">News</a></li>
 	                                    <li><a href="brani.jsp">Brani</a></li>
+	                                    <li><a href="MostraPlaylistServlet">Playlist</a></li>
+	                                    <li><a href="MostraNewsServlet">News</a></li>
+	                                    <li><a href="contact.jsp">Contattaci</a></li>
 	                                    <!-- Logout -->
 	                                    <li><a href="Logout">Logout</a></li>
 	                                 </c:if>
@@ -98,11 +98,12 @@
                                 <ul>
 	                                 <c:if test="${loggatoAdmin }">
 	                                  <li><a href="index.jsp">Home</a></li>
+	                                    <li><a href="brani.jsp">Brani</a></li>
 	                                    <li><a href="MostraPlaylistServlet">Playlist</a></li>
-	                                    <li><a href="contact.jsp">Contattaci</a></li>
 	                                    <li><a href="MostraNewsServlet">News</a></li>
 	                                    <li><a href="GestioneNews.jsp">Gestione News</a></li>
 	                                    <li><a href="MostraUtentePiuAttivo">Statistiche</a></li>
+	                                    <li><a href="contact.jsp">Contattaci</a></li>
 	                                    <!-- Logout -->
 	                                    <li><a href="Logout">Logout</a></li>
 	                                 </c:if>
@@ -115,74 +116,52 @@
                </div>
            </div>
 		</div>
-	
-                      <!-- Nav End -->	
-               
     </header>
     <!-- ##### Header Area End ##### -->
 	
     <!-- ##### Breadcumb Area Start ##### -->
      
     <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/Ligabue.jpg);">
-        <!--  
         <div class="bradcumbContent">
-            
-        </div>
-        -->
-        
+            <h2 >Risultati per: ${search}</h2>
+         		
+    	</div>
     </section>
-    
-    <!-- ##### Breadcumb Area End ##### -->
-
-    <!-- ##### Buy Now Area Start ##### -->
-      
-    
-        <div class="container">
-            <div class="row">
-
-           
-            <div class="row">
-                <div class="col-12">
-                    <div class="load-more-btn text-center">
-                       <!--   <a href="#" class="btn oneMusic-btn">Load More <i class="fa fa-angle-double-right"></i></a> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- ##### Buy Now Area End ##### -->
-
-    
-    
-    
+   
+	<br>
+	<br>    
+ 
     <!-- ##### Song Area Start ##### -->
     <div class="one-music-songs-area mb-70">
         <div class="container">
-				<c:forEach items="${songs}" var="item" varStatus="status" >
+				<c:forEach items="${songs}" var="item" varStatus="status">
                 <!-- START ITEM AREA -->
                 <div class="row" id="review" value="${reviews[status.index]}">
                 	<!-- START SONGS AREA -->
-	                <div class="col-12">  
+	                <div class="col-sm-5">  
 	                	<div id="loading" class="loader" style="display: none;" ></div>  
-	                	<div class="single-song-area mb-30 d-flex flex-wrap align-items-end">
-	                        <button style="background-color:black;" class="btn single-song-area mb-10 d-flex flex-wrap align-items-end" type="submit" name="carica" onclick="CaricaBrano('${item.titolo}', '${item.id}');prendiBrano('${item.titolo}');">
+	                	<div class="single-song-area d-flex flex-wrap align-items-end">
+	                        <button style="background-color:black;" class="btn single-song-area mb-10 d-flex flex-wrap align-items-end" type="submit" name="carica" onclick="CaricaBrano('${item.titolo}', '${item.id}')">
 	                            <img src="${item.thumbnail}" alt="">
 	                        </button>
 	                        <div class="song-play-area">
 	                            <div class="song-name">
-	                                <p value="${item.titolo}">${item.titolo}</p>
+	                                <p size="25" value="${item.titolo}">
+	                                	<b>
+	                                		${item.titolo}
+	                                	</b>
+	                                </p>
 	                            </div>
 	                        </div>
 	                        <div>
-	                			<button class="btn oneMusic-btn mt-15" type="submit" name="caricaPlaylist" onclick="AggiungiBranoPlaylist('${item.titolo}', '${item.id}')">Aggiungi alla playlist </button>
+	                			<button class="btn oneMusic-btn mt-15" type="button" name="caricaPlaylist" onclick="AggiungiBranoPlaylist('${item.titolo}', '${item.id}')"> Aggiungi alla playlist </button>
 	                		</div>
 	                   		
 	                    </div>
 	                </div>
 	                <!-- END SONGS AREA -->
 	           		<!-- START REVIEWS AREA -->               		
-					<div class="col-sm-3" >
+					<div class="col-sm-3">
 						<div class="rating-block">
 							<h4>Average user rating</h4>
 							<h2 class="bold padding-bottom-7">${reviews[status.index].rating} <small>on ${reviews[status.index].reviewTot} total</small></h2>
@@ -203,7 +182,7 @@
 							</button>
 						</div>
 					</div>
-					<div class="col-sm-3">
+					<div class="col-sm-4">
 						<h4>Rating breakdown</h4>
 						<div class="pull-left">
 							<div class="pull-left" style="width:35px; line-height:1;">
@@ -274,47 +253,16 @@
                		<!-- END REVIEWS AREA --> 
                 </div>
                 <!-- END ITEMS AREA -->
-                </c:forEach>
+                <br>
+                </c:forEach>  
      
            
         </div>
     </div>
     
-    
-    <!--  
-    <div class="one-music-songs-area mb-70">
-        <div class="container">
-        	
-            <c:forEach items="${songs}" var="item" varStatus="loop">
-                <div class="row">
-                
-                <button style="background-color:black; width:300px;" class="btn single-song-area mb-30 d-flex flex-wrap align-items-end" type="submit" name="carica" onclick="CaricaBrano('${item.titolo}', '${item.id}')">   
-                <div class="col-12">    
-                		
-                        <div class="song-thumbnail">
-                            <img id="thumbnail-${loop.index}" src="${item.thumbnail}" alt="">
-                        </div>
-                        
-                            <div class="song-name">
-                                <p id="titolo-${loop.index}" value="${item.titolo}">${item.titolo}</p>
-                            
-                            </div>
-                        
-                </div>
-                </button>
-              
-                <button style="left:120px" class="btn oneMusic-btn mt-30" type="submit" name="caricaPlaylist" onclick="AggiungiBranoPlaylist('${item.titolo}', '${item.id}')">Aggiungi alla playlist </button>
-               
-               
-                </div>
-               
-                </c:forEach>
-           
-        </div>
-    </div>
-    -->
     <!-- ##### Song Area End ##### -->
-						<!-- ##### Player Area Start ##### -->
+						
+	<!-- ##### Player Area Start ##### -->
 			
 	<div class="container-fluid" id="containerTrack" style="position:fixed; bottom:70px; z-index:3; display:none">
 		<div class="song-play-area">
@@ -328,10 +276,8 @@
 		</div>
 	</div>
                         	  
-    					
-    		
-    				
-   	 					<!-- ##### Player Area End ##### -->
+   	<!-- ##### Player Area End ##### -->
+    
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area">
         <div class="container">
@@ -341,9 +287,7 @@
                     <p class="copywrite-text"><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
 					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                </div>
-
-                
+                </div>                
             </div>
         </div>
     </footer>
