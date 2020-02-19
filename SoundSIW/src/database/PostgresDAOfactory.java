@@ -63,16 +63,16 @@ public class PostgresDAOfactory extends DAOFactory {
 	public RicercaDAO getRicercaDAO() {
 		return new RicercaDaoJDBC(dataSource);
 	}
-<<<<<<< HEAD
+
 
 	@Override
 	public RecensioneDAO getRecensioneDAO() {
 		// TODO Auto-generated method stub
-		return new RecensioneDaoJDBC(dataSource);
-=======
+	return new RecensioneDaoJDBC(dataSource);
+	}
 	public BranoAscoltatoDAO getBranoAscoltatoDAO() {
 		return new BranoAscoltatoDaoJDBC(dataSource);
->>>>>>> branch 'master' of https://github.com/blkFrank/SoundSIW.git
+
 	}
 	
 
