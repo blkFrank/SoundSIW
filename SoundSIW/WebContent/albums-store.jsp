@@ -287,7 +287,32 @@
                     <p class="copywrite-text"><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
 					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                </div>                
+                </div>
+                 <div class="col-12 col-md-6">
+                	
+					<!-- Icon-only Branded Twitter button -->
+					<a class="share-btn share-btn-branded share-btn-twitter"
+					   href="https://twitter.com/share?url=http%3A%2F%2Flocalhost:8080%2FSoundSIW%2F&text=SoundSIW è il miglior sito di musica del momento!&via=SoundSIW"
+					   title="Share on Twitter">
+						<span class="share-btn-icon"></span>
+						<span class="share-btn-text-sr">Twitter</span>
+					</a>
+				
+					<!-- Icon-only Branded Facebook button -->
+					<a class="share-btn share-btn-branded share-btn-facebook"
+					   href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost:8080%2FSoundSIW%2F"
+					   title="Share on Facebook">
+						<span class="share-btn-icon"></span>
+						<span class="share-btn-text-sr">Facebook</span>
+					</a>
+						<!-- Icon-only More/share button -->
+					<a class="share-btn share-btn-more"
+					   href="https://www.addtoany.com/share_save?linkurl=http%3A%2F%2Flocalhost:8080%2FSoundSIW%2F"
+					   title="More share options">
+						<span class="share-btn-icon"></span>
+						<span class="share-btn-text-sr">More</span>
+					</a>
+                </div>	                
             </div>
         </div>
     </footer>
