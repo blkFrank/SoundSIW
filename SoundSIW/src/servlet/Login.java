@@ -32,7 +32,7 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
  String paramEmail= req.getParameter("email");
  String paramPassword = req.getParameter("password");
  
- String admin="admin@gmail.com";
+ String admin="soundsiw2020@gmail.com";
  
  session.setAttribute("loggato", false);
 
